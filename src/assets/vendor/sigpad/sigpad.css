@@ -1,0 +1,222 @@
+@font-face
+     {
+       font-family:'Pictos Pad';
+       font-weight:normal;
+       font-style:normal
+     }
+    .signature-pad
+    {
+     position:relative;
+      cursor:pointer;
+      text-decoration:underline;
+      background:rgba(253,253,0,0.1);
+      height:100px;
+      border:2px dashed #cbd0d5;
+      text-decoration:none;
+      padding: 20px 0
+    }
+    .signature-pad [data-icon]:after
+    {
+      font-family:'Pictos Pad'!important;
+      content:attr(data-icon);
+      padding-left:5px
+    }
+    .signature-pad .signature-pad-msg
+    {
+     position:absolute;
+      color:#313440;
+      font-family:sans-serif;
+      font-size:14px;
+      background:#eceef1;
+      color:#313440;
+      padding:0;
+      filter:alpha(opacity=80);
+      opacity:.80;
+      top:0;
+      right:0;
+      text-align:center;
+      padding:10px; 
+    }
+     .signature-pad .signature-pad-msg span
+     {
+      line-height:100%;
+      position:absolute;
+      top:4px;
+      right:5px;
+      font-size:30px;
+      height:29px
+     }
+      .signature-pad .signature-pad-img
+      {
+        position:absolute;top:0;left:0;
+        width:100%;
+        height:100%;
+        border:none
+      }
+      .signature-rotator
+      {
+        display:none;
+        position:fixed;top:0;left:0;right:0;bottom:0;
+        background:#dd4a38;
+        z-index:1;
+        text-align:center;
+        font-family:sans-serif;z-index:99999999
+      }
+      .signature-rotator [data-icon]:after
+      {
+        font-family:'Pictos Pad'!important;
+        content:attr(data-icon);
+        padding-left:5px
+      }
+      .signature-rotator.signature-show
+      {
+         display:block
+      }
+    .signature-rotator div
+    {
+      position:absolute;left:60%;top:44%;
+      width:100%;
+      margin-left:-50%;
+      text-align:center;
+      font-size:100px;
+      line-height:100%
+    }
+     .signature-rotator .signature-rotator-icon
+     { 
+     top:37%;left:40%
+     }
+    .signature-rotator .signature-rotator-msg
+    { 
+      font-size:40px;
+      -webkit-transform:rotate(-90deg);
+      -moz-transform:rotate(-90deg);
+      -ms-transform:rotate(-90deg);
+      -o-transform:rotate(-90deg);
+      filter:progid:dximagetransform.microsoft.basicimage(rotation=3)
+    }
+    .signature-rotator .signature-rotator-close
+    {
+      font-size:50px;top:0;left:0;
+      color:#9c3528;
+      display:block;
+      cursor:pointer;
+      width:50px;
+      margin-left:0;
+      text-align:center
+    }
+      .signature-overlay
+      {
+        display:none;
+        position:fixed;top:0;left:0;right:0;bottom:0;
+        background:#eceef1;z-index:88888888
+      }
+      .signature-overlay.signature-show
+      {
+         display:block
+      }
+      .signature-overlay .signature-clearer
+      {
+          clear:both
+      }
+      .signature-overlay .signature-powered-by
+      {
+          float:right;
+          filter:alpha(opacity=80);
+          opacity:.80;
+          text-decoration:none;
+          display:block
+        }
+       .signature-overlay .signature-powered-by text{text-decoration:none}
+       .signature-overlay .signature-wrapper
+       {
+          display:block;
+          position:relative;
+          width:100%;
+          max-width:580px;
+          margin:0 auto;
+          margin-top:120px;
+          background:none
+       }
+      .signature-overlay .signature-wrapper.signature-iphone
+      {
+        margin-top:3px
+      }
+      .signature-overlay .signature-wrapper [data-icon]:after
+      {
+         font-family:'Pictos Pad'!important;
+         content:attr(data-icon);padding-left:5px
+       }
+    .signature-overlay canvas{cursor:pointer;background:#fff;background:url(data:image/gif;base64,R0lGODlhRAIEAaIAAOHh4f///+bm5u/v7/j4+AAAAAAAAAAAACH5BAAHAP8ALAAAAABEAgQBAAP/SLHc/jDKSau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru987//AoHBILBqPyKRyyWw6n9CodEqtWq/YrHbL7Xq/4LB4TC6bz+i0es1uu9/wuHxOr9vv+Lx+z+/7/4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f7/AAMKHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mix/6PHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJs6bNmzhz6tzJs6fPn0CDCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat3KtavXr2DDih1LtqzZs2jTql3Ltq3bt3Djyp1Lt67du3jz6t3Lt6/fv4ADCx5MuLDhw4gTK17MuLHjx5AjS55MubLly5gza97MubPnz6BDix5NurTp06hTq17NurXr17Bjy55Nu7bt27hz697Nu7fv38CDCx9OvLjx48iTK1/OvLnz59CjS59Ovbr169izcxAAoLuCCALCD9CuZkB3AAIimEdPfg337uMdrBfwvT0aAufTN1gPgEB9+/9nvNcfAwS8Fx+AafBHnwLhCTDAfwiecV5/BTboX4TlnTfAfBBiKOGE3nnIBn8hirgGfhqayAaK8KmoRoET6ufihyB2OCMY4aHHIgA3ksFhAAIe2KMXPwag4JBfsFjfjv7ZiOQULApppIYXPnlFhQBIucCETloJxXsyypeiAyCW+UCZZpKJ5oRnrnlem27yqGacEMbp3X92UthAnlVuaWefAfCJp51wulnomoeimWiaexI6p6GPrlnnn4PSWambgAraqKWbQtopopEqGiqjDOQpw3wTsDmqqp+K2iqpfsa5KIizcnkpqK/SuqqtubJa6p+7vhlsd7UK26uxv8o6rJynxxK7bKaONstsspje6iq1ki5brLPSbjttrJ6+0GSX43YYLbbXgosrurAGeq666bqrbLfa1kvvvezqii+87Zpqb76+8qsvwMgKHLC84RpcMMLrKswtwQ87/C3D8frr5cUYZ6zxxhx37PHHIIcs8sgkl2zyySinrPLKLLfs8sswxyzzzDTXbPPNOOes88489+zzz0AHLfTQRBdt9NFIJ6300kw37fRcCQAAOw%3D%3D) no-repeat;
+    background-size:100%;
+    zoom:1;
+    border:2px solid #cbd0d5;
+    border-top:none;
+    border-left:none
+   }
+   .signature-overlay canvas:active
+   {
+    cursor:crosshair
+  }
+   .signature-overlay .signature-btn
+   {
+    font-family:sans-serif;
+    position:absolute;
+    padding:9px;
+    cursor:pointer;
+    font-size:14px;
+    text-align:center;
+    background:#eceef1;
+    color:#313440;
+    -webkit-appearance:none;
+    border:none;
+    filter:alpha(opacity=50);
+    opacity:.50;
+    line-height:100%;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px
+    }
+   .signature-overlay .signature-btn:hover
+    {
+      text-decoration:none
+    }
+    .signature-overlay .signature-btn span
+    {
+      position:absolute;top:10.5px;
+      right:5px;
+      font-size:20px;
+      filter:alpha(opacity=80);opacity:.80
+    }
+   .signature-overlay .signature-btn.close-signature-btn
+   {
+    top:5px;
+    left:5px;
+    padding:9px 14px 9px 14px;color:#eceef1
+    }
+    .signature-overlay .signature-btn.close-signature-btn span
+    {
+      color:#313440;
+      right:10px
+    }
+    .signature-overlay .signature-btn.clear-signature-btn
+    {
+      top:5px;
+      left:45px
+     }
+    .signature-overlay .signature-btn.add-signature-btn
+    {
+      top:10px;
+      right:10px;
+      padding-right:10px;
+      border:2px solid #cbd0d5;
+      border-top:1px solid #cbd0d5;
+      border-left:1px solid #cbd0d5;
+      text-transform:uppercase;
+      filter:alpha(opacity=80);
+      opacity:.80
+    }
+  .signature-overlay .signature-btn.add-signature-btn span
+    {
+      top:9px;
+      font-size:30px
+    }

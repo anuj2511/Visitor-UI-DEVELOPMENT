@@ -1,0 +1,249 @@
+.clock-v2 {
+  padding: 5px 10px;
+  text-align: center;
+  #liveclock {
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.clock-datepick {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 75px;
+  text-decoration: underline;
+  color: #266dab;
+}
+
+.clock-timepick {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 40px;
+  text-decoration: underline;
+  color: #266dab;
+}
+
+.force-scroll {
+  width: 100%;
+  height: 235px;
+  overflow-y: scroll;
+  margin-bottom: 5px;
+}
+
+#Config_WorkHrs {
+  input[type="text"], select {
+    width: 75px !important;
+  }
+}
+
+.colspan-hack {
+  display: none;
+}
+
+.overlay-test {
+  position: relative;
+}
+
+.refresh-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  padding: 25% 0 0 35%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  button {
+    margin: 0 auto;
+  }
+}
+
+.myclock-truncate {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+
+.cal-legends li .leave {
+  background-color: #F08037 !important;
+}
+
+#myTimesheet tbody tr td, #eTimeclock_StaffSetup tbody tr td, #eTimeclock_OfficerSetup tbody tr td, #eTimeclock_GrpSetup tbody tr td, #eTimeclock_GrpAssign tbody tr td, #Clocktime_Edit tbody tr td, #ShiftAssign_table tbody tr td, .Clocktime_Edit_Ind tbody tr td, #eTimeclock_GrpSetup_archive tbody tr td, #eTimeclock_ProjSetup tbody tr td, #eTimeclock_ProjSetup_archive tbody tr td, #Clock_PhotoMap_Report tbody tr td {
+  vertical-align: middle !important;
+}
+
+#myTimesheet .timesheet-leave, #eTimeclock_StaffSetup .timesheet-leave, #eTimeclock_OfficerSetup .timesheet-leave, #eTimeclock_GrpSetup .timesheet-leave, #eTimeclock_GrpAssign .timesheet-leave, #Clocktime_Edit .timesheet-leave, #ShiftAssign_table .timesheet-leave, .Clocktime_Edit_Ind .timesheet-leave, #eTimeclock_GrpSetup_archive .timesheet-leave, #eTimeclock_ProjSetup .timesheet-leave, #eTimeclock_ProjSetup_archive .timesheet-leave, #Clock_PhotoMap_Report .timesheet-leave {
+  color: #F08037;
+}
+
+.accu-widget .refresh {
+  margin: 20px 5px;
+}
+
+.config-bg {
+  background-color: rgba(239, 239, 239, 0.25) !important;
+  border: #ededed thin solid !important;
+}
+
+.reminder-clock select {
+  width: 100px;
+  margin: 5px 5px 0 15px;
+}
+
+.reminder-msg-box {
+  background-color: rgba(239, 239, 239, 0.25);
+  padding: 20px;
+  margin: 20px 0;
+  textarea {
+    padding: 20px;
+  }
+}
+
+.select-50 {
+  width: 55px;
+}
+
+.select-100 {
+  width: 100px;
+}
+
+.roster-table {
+  table-layout: fixed;
+  th {
+    &:first-child {
+      width: 220px !important;
+    }
+    width: 120px !important;
+  }
+}
+
+.roster-table-test {
+  font-size: 12px;
+  th {
+    &:first-child {
+      width: 100px !important;
+    }
+    padding: 5px 2px !important;
+  }
+  td {
+    padding: 5px 2px !important;
+  }
+}
+
+.ClockManage_Edit .clock-timepick {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: inherit !important;
+  text-decoration: underline;
+  color: #266dab;
+}
+
+.roster-active-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #62cb31;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.roster-deactived-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #999999;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.label-width-md {
+  width: 175px;
+  display: inline-block;
+}
+
+.timezone-truncate {
+  width: 130px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+
+.form-text-fix {
+  margin-top: 7px;
+  display: block;
+}
+
+.clockedit-proj-select {
+  width: 125px !important;
+}
+
+.clockphoto {
+  overflow: hidden;
+  background-color: #ededed;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  i {
+    margin: 20px auto;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    color: #999;
+  }
+}
+
+.clockmap {
+  overflow: hidden;
+  background-color: #ededed;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  i {
+    margin: 20px auto;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: #999;
+  }
+}
+
+.admin-cal .remarks {
+  color: #777;
+  font-size: 11px;
+}
+
+.roster-filter-links {
+  margin-top: 10px;
+  li {
+    list-style: none;
+    display: inline-block;
+    a {
+      &:hover, &.active {
+        border-bottom: 2px #9b59b6 solid;
+        color: #9b59b6;
+      }
+    }
+  }
+  .dropdown-menu {
+    > li > a {
+      &:hover, &:focus {
+        color: #262626;
+        text-decoration: none;
+        background-color: none;
+        border-bottom: none;
+        width: 100%;
+      }
+    }
+    li {
+      width: 100%;
+    }
+  }
+}

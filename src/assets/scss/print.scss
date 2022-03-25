@@ -1,0 +1,9 @@
+@media print {
+  .hidden-print, #header, #menu, .normalheader, #wrapper {
+    display: none !important;
+  }
+  @page {
+      size: A4; /* DIN A4 standard, Europe */
+      margin:0;
+    }
+}

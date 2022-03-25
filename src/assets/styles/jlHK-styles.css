@@ -1,0 +1,12 @@
+.form-inline-hk {
+	margin: 20px 0;
+}
+.form-inline-hk .form-group {
+	margin-right: 30px;
+}
+.form-inline-hk label{
+	width: 150px;
+}
+.form-inline-hk input[type="text"] {
+	width: 210px;
+}

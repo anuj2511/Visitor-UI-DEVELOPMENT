@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Droid Sans';
+    src: url('fonts/DroidSans/DroidSans-webfont.woff');
+    src: url('fonts/DroidSans/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DroidSans/DroidSans-webfont.woff2') format('woff2'),
+         url('fonts/DroidSans/DroidSans-webfont.woff') format('woff'),
+         url('fonts/DroidSans/DroidSans-webfont.ttf') format('truetype'),
+         url('fonts/DroidSans/DroidSans-webfont.svg#droid_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{ 
+	font-family: 'Droid Sans';
+	src: url('fonts/DroidSans/DroidSans-Bold.woff');
+	src: url('fonts/DroidSans/DroidSans-Bold.eot?iefix') format('eot'),
+	     url('fonts/DroidSans/DroidSans-Bold.woff') format('woff'),
+	     url('fonts/DroidSans/DroidSans-Bold.ttf') format('truetype'),
+	     url('fonts/DroidSans/DroidSans-Bold.svg#webfont') format('svg');
+	font-weight: bold;
+}

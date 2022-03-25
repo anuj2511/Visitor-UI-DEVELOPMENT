@@ -1,0 +1,32 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install -g @angular/cli@8.3.29
+  pre_build:
+    commands:
+      - npm config set @justlogin:registry https://www.myget.org/F/justlogin/auth/f5721c3e-d13c-4de8-9fd7-bb60dc16cfe8/npm/
+      - npm install
+      - rm --force ./node_modules/ng2-datetime/src/ng2-datetime/ng2-datetime.spec.ts || true
+  build:
+    commands:
+      - npm run build:$BUILD_ENV
+# USE THE FOLLOWING COMMANDS TO BUILD THE ARTIFACT TO BE USED IN MANUALLY CALLING CODE BUILD
+#   post_build:
+#     commands:
+#       # - zip -r ./scaffold-ui-$(date +%Y-%m-%d).zip ./dist/people ./appspec.yml
+#       - zip -r ./scaffold-ui.zip ./dist ./appspec.yml ./web.config
+# artifacts:
+#   # base-directory: dist
+#   files:
+#     # - 'scaffold-ui-$(date +%Y-%m-%d).zip'
+#     - 'scaffold-ui.zip'
+#   name: scaffold-ui-$(date +%Y-%m-%d)
+# USE THE FOLLOWING COMMANDS WHEN BUILDING AND DEPLOYING VIA CODE PIPELINE
+artifacts:
+  files:
+    - 'dist/**/*'
+    - 'appspec.yml'
+    - 'web.config'

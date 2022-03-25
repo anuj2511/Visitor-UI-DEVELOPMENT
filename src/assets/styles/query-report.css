@@ -1,0 +1,127 @@
+.query-report textarea {
+  resize: none;
+  width: 70%;
+}
+
+.epayroll-form-fields {
+  margin: 10px auto;
+}
+.epayroll-form-fields .form-fields label {
+  margin: 3px 2px;
+}
+
+.selected-compo {
+  width: 100%;
+  margin: 10px 0;
+}
+.selected-compo li {
+  width: 33.333%;
+  list-style: none;
+  margin: 5px 0;
+  float: left;
+}
+
+.custom-new-report .footable-toggle {
+  display: none !important;
+}
+
+.custom-report-header input {
+  width: 66%;
+}
+.custom-report-header textarea {
+  font-size: 12px;
+  width: 66% !important;
+  display: inline-block;
+  resize: none;
+}
+
+.current-filter {
+  border-bottom: 1px solid #e4e5e7;
+  max-height: 300px;
+  overflow: auto;
+}
+.current-filter label {
+  min-width: 130px;
+}
+.current-filter select.form-control {
+  /*width: 100%;*/
+  display: inline-block;
+}
+.current-filter select.form-control.custom-sm {
+  width: 43%;
+}
+
+.panel-body.filter-box {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.custom-sm input {
+  width: 72px;
+  margin-left: 14px;
+  height: 34px;
+  vertical-align: top;
+}
+.custom-sm select {
+  width: 40% !important;
+}
+
+.fc-field {
+  margin: 5px 10px;
+  min-width: 125px;
+  border-radius: 50px;
+  padding: 3px 8px;
+  background-color: #FBFCFE;
+  color: #655DC6;
+  border: 1px dashed #655DC6;
+  cursor: move;
+  font-weight:bold;
+}
+
+.custom-report-prev th.fc-field {
+  vertical-align: middle;
+  color: #6a6c6f;
+  font-weight: bold;
+}
+
+#sourceFields th {
+  display: inline-block;
+}
+
+h4.panel-title{
+  text-transform: none !important;
+}
+.filter-panel {
+  max-height: 300px;
+  overflow: auto;
+}
+.filter-header {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.filter-row {
+  margin-bottom: 10px;
+  max-height: 300px;
+  overflow: auto;
+}
+.filter-row .fa.fa-times-circle {
+  margin-top: 10px
+}
+table.filter-row td{
+  border-top: none !important;
+}
+.reports-addfilter {
+  margin-left: 10px;
+}
+.customreports-selected-fields {
+  border: #ededed thin solid; 
+  padding: 20px; 
+  max-height: 550px; 
+  overflow: auto;
+  min-height: 550px;
+}
+.fc-source-fields {
+  max-height: 356px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

@@ -1,0 +1,13 @@
+<lay-header [IsAuthenticated]="IsAuthenticated" [AuthToken]="AuthToken"></lay-header>
+<!-- TODO: Change this so there is always a sidebar but it's not showing data if not logged in -->
+<div *ngIf="IsAuthenticated">
+    <lay-sidebar [IsAuthenticated]="IsAuthenticated"></lay-sidebar>
+</div>
+<div id="wrapper">
+    <div class="content">
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+    <lay-footer></lay-footer>
+</div>

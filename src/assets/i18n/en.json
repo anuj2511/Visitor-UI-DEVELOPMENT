@@ -1,0 +1,22 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language"
+  },
+  "SIDEBAR": {
+    "LEAVE": "Leave",
+    "PAYROLL": "Payroll",
+    "ATTENDANCE": "Attendance",
+    "EXPENSE": "Expense",
+    "BENEFIT": "Benefit",
+    "PEOPLE": "People",
+    "SETTINGS": "Settings"
+  },
+  "HEADER": {
+    "MYINFO": "MY Info",
+    "EMPLOYMENT": "Employment",
+    "DOCUMENTS": "Documents",
+    "NOTES": "Notes",
+    "TRAINING": "Training"
+  }
+}
