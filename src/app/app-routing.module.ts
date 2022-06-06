@@ -19,7 +19,7 @@ const routes: Routes = [
 
   { path: 'invites', loadChildren: () => import('./invites/invites.module').then(m => m.InvitesModule) },
 
-  { path: 'configuration', loadChildren: () => import('./configuration/configuration.module').then(m => m.ConfigurationModule) },
+  // { path: 'configuration', loadChildren: () => import('./configuration/configuration.module').then(m => m.ConfigurationModule) },
 
   { path: 'visitorprofile', loadChildren: () => import('./visitorprofile/visitorprofile.module').then(m => m.VisitorprofileModule) },
 
