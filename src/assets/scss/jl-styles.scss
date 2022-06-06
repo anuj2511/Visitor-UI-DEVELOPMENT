@@ -1,0 +1,1588 @@
+$gray-link:#9d9fa2;
+$green-link:#62cb31;
+$pink-link: #E02647;
+// homer resets //
+#header {
+	height: 62px;
+}
+#side-menu li a {
+  span.nav-label {
+    text-transform: none;
+    font-weight: 600;
+  }
+  img {
+    width: 25px;
+    margin-right: 10px;
+  }
+}
+nav .label {
+	width: inherit;
+}
+.label {
+    width: 60px;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.btn-default {background-color: #ededed}
+
+.panel-body {
+	cursor: default !important;
+}
+.datepicker-switch {
+	text-align: center;
+}
+.modal-backdrop.in {
+    opacity: .75;
+}
+.small-logo {font-weight: 600;}
+#logo {
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	img {
+		margin: 15px auto;
+    display: block;
+	}
+}
+.hpanel.panel-collapse > .panel-heading, .hpanel .hbuilt {
+	padding: 10px 15px;
+}
+
+// jl styles start here //
+a.dragme {
+	cursor: move;
+}
+
+.link-green {
+	color: $green-link;
+	&:hover {
+		color: $gray-link
+	}
+}
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+.right {text-align: right;}
+.center {text-align: center;}
+// my profile // 
+.profile-picture {
+	.initials {
+		height: 76px;
+    width: 76px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    margin: 0 auto 15px auto;
+    background-color: #3498db;
+    color: #ffffff
+	}
+
+	h2 {line-height: 76px;}
+}
+.panel-title 	.edit, td a.edit {
+	font-size: 10px;
+  text-decoration: underline;
+  color: $gray-link;
+	}
+.add {
+	font-size: 10px;
+	text-decoration: underline;
+	color: $green-link;
+	line-height: 20px;
+	&:hover {
+		color: $gray-link
+	}
+}
+.basic-info {
+	fieldset {
+		margin: 5px;
+	}
+	label {
+		margin-right: 10px;
+		min-width: 155px;
+		font-weight: 400;
+		vertical-align: top;
+		margin-top:5px;
+	}
+	.detail {
+		display: inline-block;
+		margin-right: 10px;
+		line-height: normal;
+	}
+	.edit {
+		font-size: 10px;
+    	text-decoration: underline;
+    	color: $gray-link;
+		line-height: 24px;
+	}
+	input, select {
+		width: 50%; //decreased size//
+    	display: inline-block;
+	}
+	input[type="file"] {
+		margin-top: 5px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.basic-info {
+		input {width: 100%;}
+	}
+}
+
+// eleave module //
+.eleave-chartbox {
+	position: relative;
+	.balance {
+		text-align: center;
+		position: absolute;
+		top: 30%;
+		right: 43%;
+		h3 {
+			margin-bottom: 0;
+			font-weight: bold
+		}
+	}
+}
+.leave-form,.benefit-form {
+	.input-daterange {
+    width: 97%;
+	}
+	fieldset {
+		margin: 10px 0;
+	}
+	label {
+		min-width: 175px;
+		display: inline-block;
+		vertical-align: top
+	}
+	select {
+		width: 66%;
+		display: inline-block;
+	}
+	input {
+		width: 66%;
+		display: inline-block;
+	}
+	.detail {
+		width: 66%;
+		display: inline-block;
+		float: right
+	}
+		.edit {
+		font-size: 10px;
+    text-decoration: underline;
+    color: $gray-link;
+		line-height: 24px;
+	}
+		input[type="file"] {
+		margin-top: 5px;
+		width: 53%;
+	}
+	.drophere {
+		.dropzone {
+			width: 66%;
+	    margin-left: 5px;
+	    padding: 10px 0;
+	    -webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+	}
+	.officers {
+		margin: 20px 0;
+		}
+		.dropdown {
+			display: initial;
+		}
+		.dropdown-menu {
+			padding: 10px;
+		}
+	.time-toggles {
+		margin-left: 3px;
+		width: 66%;
+		input {width: 50%}
+		.pull-left, .pull-right {
+			width: 49%;
+		}
+	}
+	.datepicker-wrap {width: 66%; display: inline-block;}
+	.select-staff, textarea {
+		width: 66% !important;
+		display: inline-block;
+		border-color: #e4e5e7 thin solid !important;
+	}
+	textarea {resize:none;}
+}
+.cal-filters {
+	margin: 5px -15px;
+	select, .btn-group {margin: 5px 0;}
+}
+.cal-legends {
+	margin: 20px auto;
+	padding: 0;
+	text-align: center;	
+	li {
+		display: inline-block;
+		list-style: none;
+		margin: 10px;
+	}
+	li .swatch {
+    width: 10px;
+    height: 10px;
+    background-color: #cccccc;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 20px;
+	}
+	li .blue {
+		background-color: #34495e;
+	}
+	li .green {
+		background-color: $green-link;
+	}
+	li .gray {
+		background-color: $gray-link;
+	}
+}
+.hpanel .panel-body .leave-summary-box {
+		border: 1px solid #e4e5e7;
+		margin-top: 20px;
+
+		h2 {
+			display: inline-block;
+			margin-right: 10px;
+			margin-top: 0
+		}
+		p {text-align: center}
+}
+
+.leave-summary, .payslip-summary {
+	.row-fluid {
+		white-space: nowrap;
+		.col-md-4, .col-lg-2 {
+			display: inline-block;
+		}
+	}
+	.progress {
+		margin-bottom: 0;
+		p {text-align: center;}
+	}
+	.show {display: block}
+	.hide {display: none;}
+}
+
+.box {
+	  padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+		overflow-x: scroll;
+
+    .hpanel {
+    	// width: 30%;
+    	display: inline-block;
+    }
+    .hpanel.col-lg-3, .hpanel.col-lg-2 {
+    	float: none;
+    }
+}
+
+// eleave module AO/RO //
+.block-leave-form, .bank-details {
+	label {
+		min-width: 175px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	select, input {
+		width: 70%;
+		display: inline-block;
+		font-size: 12px;
+	}
+	.add-staff {
+		width: 50%;
+		margin-right: 5px;	
+	}
+	.edit {font-size: 10px;}
+	.datepicker-wrap {width: 70%; display: inline-block;}
+	.time-toggles {
+		.pull-left, .pull-right {
+			width: 50%
+		}
+	}
+	.detail {display: inline-block;}
+	fieldset {margin:10px 0}
+	.btn-block {margin:30px 0 20px 0}
+	.select-staff {
+		width: 70% !important;
+		display: inline-block;
+		margin-right: 5px;
+		border-color: #e4e5e7 thin solid !important;
+	}
+	textarea {
+		width: 70%;
+		resize: none;
+		display: inline-block;
+	}
+}
+
+.box.aoro-box {
+	padding: 5px 20px;
+}
+.aoro {
+	// .btn {min-width: 80px;} 
+}
+@media screen and (max-width: 1024px) {
+.aoro {
+	// .btn {min-width: 50px;} 
+}	
+}
+// eleave view info //
+.leave-info {
+	margin: 10px 0;
+	label {
+		font-weight: bold;
+    min-width: 175px;
+	}
+	.detail {
+		margin: 5px 20px;
+		display: inline-block;
+	}
+	p {line-height: 24px;}
+}
+
+// epayroll module //
+.payslip-summary {
+	.box {padding: 20px 0;}
+	.switch-label {
+		background: #ccc;
+	} 
+}
+.payslip-summary-box {
+		border: 1px solid #e4e5e7;
+		text-align: center;
+
+		.pe-7s-note2 {
+			font-size: 3em;
+			margin-bottom: 10px;
+		}
+
+    h4 {line-height: 29px;}
+}
+.payslip-year {
+	padding-left: 0;
+}
+
+.doughnut-legends {
+	  margin: 0;
+    padding: 0 20px;
+	li {
+		list-style: none;
+		margin: 10px 0;
+	}
+	li .swatch {
+    width: 10px;
+    height: 10px;
+    background-color: #cccccc;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 20px;
+	}
+	li .legend1 {
+		background-color: #62cb31;
+	}
+		li .legend2 {
+		background-color: #91dc6e;
+	}
+		li .legend3 {
+		background-color: #a3e186;
+	}
+}
+.print-cta {
+	margin: 10px 0 20px 0;
+	.btn {margin-right: 5px;}
+}
+.epayroll-pin {
+	text-align: center;
+	input {margin: 10px 0 20px 0}
+	.btn {margin-bottom: 20px;}
+}
+
+// etimeclock module //
+.etimeclock-main {
+	.col-lg-4 {
+		margin-top: 20px;
+	}
+	.clock-box {
+		text-align: center;
+		input {
+			text-align: center;
+			font-size: 3.5em;
+			border: 5px solid #e4e5e7;
+		}
+	}
+	.clock-details {
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+    padding: 20px 0;
+    max-width: 301px;
+    margin: 0 auto;
+
+		select {margin: 0 0 20px 0;}
+
+		p {margin: 20px 0;}
+	}
+}
+.chart-box {
+	min-height: 250px;
+	padding: 20px;
+}
+.etimeclock-edit {
+	fieldset {margin: 10px 0}
+	label {
+		min-width: 155px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	select, textarea {
+		display: inline-block;
+		width: 50%;
+	}
+	select.time {
+		display: inline-block;
+		width: 75px;
+	}
+	textarea {
+		resize: none;
+	}
+	p {
+		display: inline-block;
+		font-weight: 600;
+	}
+}
+
+// ereports //
+.ereports {
+	i {font-size: 1.5em}
+	.table {
+		margin-bottom: 0;
+		td {
+			border-top: none;
+			vertical-align: middle;
+			select {min-width: 175px}
+			span {
+				display: inline;
+		    margin-left: 10px;
+		    vertical-align: top;
+			}
+		}
+	} 
+}
+
+// scrollbar //
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+// toggle //
+.switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 56px;
+  height: 20px;
+  padding: 3px;
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(top, #eeeeee, white 25px);
+  background-image: -moz-linear-gradient(top, #eeeeee, white 25px);
+  background-image: -o-linear-gradient(top, #eeeeee, white 25px);
+  background-image: linear-gradient(to bottom, #eeeeee, white 25px);
+}
+
+.switch-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.switch-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: #ccc;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  -webkit-transition-property: opacity background;
+  -moz-transition-property: opacity background;
+  -o-transition-property: opacity background;
+  transition-property: opacity background;
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+  }
+  &:before {
+    content: attr(data-off);
+    right: 11px;
+  	color: #ffffff;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  }
+  &:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+  }
+}
+
+.switch-input:checked ~ .switch-label {
+  background: #47a8d8;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+  &:before {
+    opacity: 0;
+  }
+  &:after {
+    opacity: 1;
+  }
+}
+
+.switch-handle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: -moz-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: -o-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: linear-gradient(to bottom, white 40%, #f0f0f0);
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    background-image: -webkit-linear-gradient(top, #eeeeee, white);
+    background-image: -moz-linear-gradient(top, #eeeeee, white);
+    background-image: -o-linear-gradient(top, #eeeeee, white);
+    background-image: linear-gradient(to bottom, #eeeeee, white);
+  }
+}
+
+.switch-input:checked ~ .switch-handle {
+  left: 34px;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch-green > .switch-input:checked ~ .switch-label {
+  background: #4fb845;
+}
+
+// net grid //
+.net-grid-style {
+  th {
+    border: white thin solid;
+  }
+  td {
+    border-bottom: #ddd thin solid;
+    border-right: transparent thin solid;
+  }
+  > tbody > tr {
+    &:nth-of-type(odd) {
+      background-color: #ffffff;
+    }
+    &:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+  }
+}
+
+// phase 2 resets //
+@media (min-width: 1200px){
+	.col-lg-12 {
+		max-width: 1200px;
+	}	
+}
+
+.btn-primary {
+background-color: #266dab;
+  border-color: #266dab;
+}
+.btn-primary:hover {
+	background-color: #197192;
+	border-color: #197192;
+} 
+.jl-barline {
+	background: #006286;
+}
+
+// eform //
+.form-view-options {
+	font-size: 16px;
+	span {
+		font-size: 12px;
+	}
+}
+.form-view-options a:hover, .form-view-options a.active {
+	color: #777777; 
+}
+.my-form-wrap {
+	margin: 20px auto; //adjusted margin//
+	.my-form {
+		text-align: center;
+		.fa {
+			font-size: 36px; margin: 10px 0 0 0;
+		}
+		p {margin-top: 10px;}
+	}
+}
+.my-form-list {
+	li {
+		margin: 10px 0;
+		.fa {
+			margin-right: 5px
+		}
+	}
+}
+.eform-workflow {
+	label {font-weight: bold;}
+
+}
+.eform-daterange {
+	.pull-left, .pull-right {
+		width: 50%;
+		input {
+			width: 95%
+		}
+	}
+}
+
+.workflow-options {
+	.panel-heading {
+		background-color: white;
+		padding: 10px 0;
+	}
+	.panel-group {
+		margin-bottom: 0;
+	}
+}
+.fa-file-pdf-o {
+	color: red;
+}
+.label-actionhis, .label-formhis {
+	padding: 2px 5px;
+	min-width: 90px;
+}
+
+.payroll-report.form-inline label {
+	min-width: 115px;
+}
+.payroll-report.form-inline select, .payroll-report.form-inline .select-staff {
+	width: 56% !important;
+}
+
+//ebenefit//
+.benefit-form {
+	input.amount,input.date-inccured, .drophere .dropzone{
+	width: 66%
+	}
+}
+.ebenefit-daterange {
+	.pull-left {
+		width: 49%;
+			input[type=text] {width: 100%;}
+	}
+		.pull-right {
+		width: 49%;
+			input[type=text] {width: 100%;}
+	}
+}
+.ebenefit-reports {
+	fieldset {
+		margin: 10px 0;
+	}
+	select {
+		font-size: 12px;
+	}
+}
+
+//pending actions//
+.pa-viewmore {
+	margin: 15px 0;
+}
+.list-search {
+	margin: 0 auto 30px auto;
+	text-align: center;
+	.sort:after {
+  display:inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+	}
+	.sort.asc:after {
+	  width: 0;
+	  height: 0;
+	  border-left: 5px solid transparent;
+	  border-right: 5px solid transparent;
+	  border-top: 5px solid #fff;
+	  content:"";
+	  position: relative;
+	  top:4px;
+	  right:-5px;
+	}
+	.sort.desc:after {
+	  width: 0;
+	  height: 0;
+	  border-left: 5px solid transparent;
+	  border-right: 5px solid transparent;
+	  border-bottom: 5px solid #fff;
+	  content:"";
+	  position: relative;
+	  top:-4px;
+	  right:-5px;
+	}
+}
+#leave_pending_actions, #benefit_pending_actions, #form_pending_actions  {
+	th {vertical-align: middle;}
+	.no-sort {
+		padding-left: 5px!important;
+		padding-right: 5px;
+	}
+	.no-sort.sorting:after, .no-sort.sorting_asc:after, .no-sort.sorting_desc:after {
+		display: none!important;
+		pointer-events: none!important; 
+		cursor: default!important;
+		
+	}
+	.action {
+		height: 60px;
+		vertical-align: middle;
+	}
+}
+
+//leave widget //
+.eleave-widget-box {
+	  padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    .hpanel {
+    	display: inline-block;
+    }
+    .hpanel.col-lg-4, .hpanel.col-lg-2 {
+    	float: none;
+    }
+}
+.leave-widget {
+		.panel-body {border-top: 1px solid #e4e5e7;}
+			.progress {
+				margin:20px 0 10px 0;
+				background-color: #62cb31;
+			}
+			.progress-bar {
+				text-align: center;
+				padding-right: 0;
+			}
+}
+.leave-widget-legends {
+	margin: 20px auto;
+	padding: 0;
+	text-align: center;	
+	li {
+		display: inline-block;
+		list-style: none;
+		margin: 10px;
+	}
+	li .swatch {
+    width: 10px;
+    height: 10px;
+    background-color: #cccccc;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 20px;
+	}
+	li .pending {
+		background-color: #ffb606;
+	}
+	li .used {
+		background-color: #e74c3c;
+	}
+	li .balance {
+		background-color: #62cb31;
+	}
+}
+
+.eleave-formula {
+	.panel-body {
+		border-top: 1px solid #e4e5e7;
+    padding: a20px 10px;
+	}
+	.right {
+		text-align: right;
+	}
+}
+
+// payroll onboarding //
+.onboarding-company {
+	fieldset {
+		margin: 10px 0;
+	}
+	label {min-width: 175px;}
+}
+.payroll-setup-element {
+	.switch-label {
+		background: #ccc;
+	} 
+}
+.payroll-addpayelements {
+	label {
+		font-weight: bold;
+		min-width: 175px;
+	}
+	.radio-inline, .checkbox-inline {
+		margin-top: 5px;
+		font-weight: normal;
+	}
+	fieldset {
+		margin: 20px 0;
+	}
+	.radio-inline,.checkbox-inline {
+		min-width: inherit;
+	}
+	select {
+		width: 50%;
+		font-size: 12px;
+	}
+	.datepicker-wrap {
+		display: inline-block;
+		width: 70%;
+	}
+	input {
+		font-size: 12px;
+	}
+	label input[type="radio"], label input[type="checkbox"] {
+		width: 30px !important;
+		margin-top: 2px;
+	}
+	.amount-limit {
+		margin: 10px 0;
+	}
+	.datepicker-wrap {
+		width: initial;
+	}
+}
+.onboarding-import-staff {
+	ol, ul {
+		line-height: 2em;
+		a {color: $pink-link}
+	}
+	.dropzone {width: 100%}
+	.import {
+		td {
+			border: none;
+    	padding: 0 20px;	
+		}
+	}
+	.alert {
+		border-radius: 4px;
+		margin-bottom: 20px;
+		.fa {font-size: 16px;}
+	}
+	.mapping {
+		td {vertical-align: middle;}
+		select {font-size: 13px;}
+	}
+}
+	ul.race-list {
+		li {width: 50%;float: left;}
+	}
+	.addstaff-view {
+		select {
+			margin: 0 5px;
+		}
+	}
+	.onboarding-status {
+		margin: 50px -20px;
+		    width: 75%;
+		li {
+			height: 100px;
+		}
+		.stacked-text {
+			font-size: 1.25em;
+		}
+	}
+	.onboarding-status.stacked>li {
+			text-indent: 0;
+		}
+	.onboarding-status.progress-indicator.stacked .stacked-text {
+			top: -20px;
+	}
+
+// after onboarding central setup //
+.left-indent {
+	text-indent: 10px;
+}
+.list-space {margin-bottom: 20px;}
+.importdash-status {
+	margin: 50px -20px;
+	width: 75%;
+	.stacked-text {
+		font-size: 1.25em;
+		a {
+			color: #fff;
+			font-size: 12px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.btn-default {
+			color: #6a6c6f;
+		}
+		.btn-default:hover {
+			background-color: #e6e6e6;
+		}
+	}
+
+}
+.importdash-status.stacked>li {
+		text-indent: 0;
+	}
+.importdash-status.progress-indicator.stacked .stacked-text {
+		top: -20px;
+}
+.add-options {
+	.panel-heading {
+		border-bottom: 1px solid #e4e5e7 !important;
+	}
+}
+
+
+// ENHANCEMENT: etimeclock //
+.timeclock-data-box {
+	min-height: 197px;
+}
+.etimeclock-main .clock-box input.clock-disabled {
+	min-height: 197px !important;
+}
+
+.sidebar-disabled {
+	color: #ffffff;
+	background-color: #bdbdbd;
+	cursor: not-allowed;
+}
+.sidebar-disabled a:hover {
+	color: #ffffff;
+	background-color: #bdbdbd;
+	cursor: not-allowed;
+}
+
+// onboarding end page //
+.checkmark {
+  width: 100px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 2s ease-in-out;
+  -webkit-animation: dash 2s ease-in-out;
+}
+
+.spin {
+  animation: spin 2s;
+  -webkit-animation: spin 2s;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes dash {
+ 0% {stroke-dashoffset: 1000;}
+ 100% {stroke-dashoffset: 0;}
+}
+
+@keyframes dash {
+ 0% {stroke-dashoffset: 1000;}
+ 100% {stroke-dashoffset: 0;}
+}
+
+@-webkit-keyframes spin {
+  0% {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+  0% { -webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+// leave onboarding //
+.leave-onboarding {
+	margin-bottom: 75px;
+	.indent {margin: 0 0 0 20px}
+}
+.none {
+	display: none;
+}
+.ph-setup {
+	input[type="checkbox"] {vertical-align: middle;}
+	select {font-size: 12px}
+}
+.eleave-staff {
+	th {vertical-align: middle !important;}
+}
+.eleave-type {
+	th {text-align: center;}
+	td {vertical-align: middle !important;}
+}
+#EditLeaveType, #AddLeaveType {
+	.control-label {
+		text-align: left
+	}
+	.margin-bottom-5 {
+		margin-bottom: 5px;
+	}
+}
+.leave-grade {
+	th, td {
+			vertical-align: middle !important;
+	}
+}
+
+// PAYROLL ADMIN: payrun dashboard //
+.payrun-dashboard {
+	.btn-big{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.badge {
+		font-size: 11px;
+		font-weight: normal;
+	} 
+	.prep-payroll {
+		min-height: 434px;
+		.hpanel.hbgblue {
+			margin-bottom: 0;
+			a {color: #fff}
+		}
+	}
+	.post-payroll {
+		min-height: 434px;
+		.hpanel.hbgyellow {
+			margin-bottom: 0;
+			a {color: #fff}
+		}
+		table {margin-bottom: 0}
+	}
+	.payrun-pie {
+		.c3-chart-arc text {
+			display: none;
+		}
+	}
+}
+.tooltip-wrapper.disabled {
+  /* OPTIONAL pointer-events setting above blocks cursor setting, so set it here */
+  cursor: not-allowed;
+}
+
+// PAYROLL ADMIN: start payrun //
+.new-payrun {
+	fieldset {
+		margin-bottom: 20px;
+	}
+	label {
+    font-weight: bold;
+    min-width: 150px;
+	}
+  input, select {
+	  width: 50%;
+	  display: inline-block;
+	  font-size: 12px;
+	}
+	input[type="checkbox"] {
+		width: initial;
+	}
+	.radio-box {
+		display: inline-block;
+		margin-left: 20px;
+		.staff-icon {
+			vertical-align: top;
+	    display: inline-block;
+	    margin-top: 25px;
+		}
+		.disabled {
+			cursor: not-allowed;
+		}
+		input[type="radio"] {
+			width: initial;
+		}
+	}
+		.radio-inline, .checkbox-inline {
+			font-weight: normal;
+			min-width: 20px;
+			margin: 0 10px 0 0;
+		}
+		.checkbox-inline {
+			margin-top: 5px;
+		}
+	textarea {
+		width: 75%;
+		resize: none;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	#datepicker2, #datepicker3 {
+		width: 30%
+	}
+}
+
+.payrun-details {
+	.label {
+		width: inherit;
+		padding: .2em .6em .3em;
+	}
+}
+.import-staff-ddown {
+	  float: right;
+    margin-left: 5px;
+    position: relative;
+}
+.alert-payrunprogress {
+	.alert-fail {
+		background-color: #ededed;
+	}
+	.alert-pending {
+		background-color: #ffdb99
+	}
+	.details-fail {
+		border-left:#6a6c6f thin solid; 
+		margin-left:10px; 
+		padding-left:10px
+	}
+	.details-pending {
+		border-left:#8a6d3b thin solid; 
+		margin-left:10px; 
+		padding-left:10px
+	}
+	.details-approved {
+		border-left:#3c763d thin solid; 
+		margin-left:10px; 
+		padding-left:10px
+	}
+	.dropdown {
+		margin-top: 15px;
+	}
+	.btn-white {
+		background-color: #ffffff
+	}
+	.btn-white:hover {
+		background-color: #cccccc;
+	}
+}
+.label-pending {
+	background-color: #ffa500;
+}
+.label-payrun-detail {
+	font-size: .75em;
+	padding:5px;
+	width: initial;
+	margin-top: 10px;
+}
+.text-fail {
+	color: #ca6f1e;
+}
+#payrun_summary {
+	th {
+		vertical-align: top
+	}
+	td.merged {
+		vertical-align: middle;
+	}
+	label {
+		width: inherit;
+		padding:5px
+	}
+	.label-fail {
+		background-color: #CA6F1E; 
+	}
+}
+.ot-hours {
+	th {
+		vertical-align: top !important
+	}
+}
+.field-50 {
+	input, select {width: 50%}
+}
+.field-25  {
+		width: 25% !important
+}
+.payroll-filegen {
+	select {
+		font-size: 12px;
+		width: 50%;
+	}
+	label {
+		font-weight: bold;
+		min-width: 220px;
+	}
+	fieldset {
+		margin: 20px 0;
+	}
+}
+.no-table {
+	background-color: #ededed;
+	padding: 10px;
+	text-align: center;
+}
+.payroll-gen-file {
+	font-size: 11px;
+}
+.payroll-updatepayinfo {
+	margin: 20px 0;
+	table {
+		.action {vertical-align: middle;}
+	}
+}
+.release-payslip {
+	th {text-align: center}
+	.form-group {
+		margin-bottom: 0
+	}
+}
+.select2-container.select2-container-multi.select-user-grp.input-sm {
+	padding:0;
+	width: 90%
+}
+.crop {
+	width: 135px;
+  overflow: hidden;
+  line-height: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+
+// ePayroll PH2 //
+.dt-salaryprog {	
+	.glyphicon {font-size: 16px;}
+	th {vertical-align: top !important}
+}
+.bonus-calc {
+	td {
+		vertical-align: middle !important;
+	}
+}
+.monthlypay-mapping {
+	.indent {
+		padding-left: 20px;
+	}
+}
+#elements-modal {
+	ul {
+		li {margin-bottom: 20px;}
+	}
+}
+.element-map {
+	td {vertical-align: middle !important;}
+}
+
+
+// eAdmin //
+.eadmin-basic {
+	padding-top: 50px;
+	label {
+		margin-top: 5px;
+	}
+	fieldset {
+		margin-bottom: 20px;
+	}
+	.field-60 {width:60%}
+	.strong-pw {
+		margin-left: 20px;
+	}
+}
+.eadmin-3rd-party {
+	td {vertical-align: middle !important;}
+}
+.eadmin-employees {
+	.deactivated {
+		margin-top: 10px;
+	}
+	#eadmin-active {
+		th {vertical-align: top !important}
+		td {vertical-align: middle;}
+	}
+}
+#admin-list {
+	margin: 50px 0 20px 0;
+	td {vertical-align: middle}
+}
+
+
+// onboarding etimeclock //
+.table-map {
+	margin: 20px 0;
+	th {vertical-align: middle !important;}
+}
+.onboarding-hourshift {
+	margin-top: 35px;
+	fieldset {
+		margin-bottom: 10px;
+	}
+	label {font-weight: bold}
+	.field-50 {width: 50%;}
+	.field-40 {width: 40%;}
+	.field-10 {width: 10%}
+}
+.workweek-preview {
+	select, input [type="text"] {min-width: 30px;}
+	.input-xs {font-size: 12px;}
+}
+.etimeclock-onboarding {
+	margin-bottom: 35px;
+	.indent {margin: 0 0 0 20px}
+}
+.weekly-hide {
+	border: #ccc thin solid;
+	padding: 10px;
+	margin-left: 35px;
+}
+.timeclock-details {
+	margin-top: 35px;
+	fieldset {margin: 20px 0;}
+	label {font-weight: bold}
+	.text-regular {font-weight: normal}
+}
+
+// eleave admin config //
+
+.ico-collapse {line-height: 36px;}
+.panel-eleave-admin {
+	.panel-default {
+		border: none;
+	}
+	.panel-title {
+    font-size: initial;
+    text-transform: none;
+    font-weight: 600;
+    color: #6a6c6f;
+	}
+	.panel-default > .panel-heading {
+		background-color: transparent;
+	}
+	.leave-onboarding {
+		border-bottom: #ededed dashed thin;
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+	}
+}
+.leave-admin-forms {
+	fieldset {margin: 15px 0;}
+	label {min-width: 200px !important;}
+	input.form-control.field, select.form-control.field {width: 200px}
+}
+.progress-indicator.leave-import-progress {
+	margin: 20px 0 40px 0;
+	li {
+		line-height: normal;
+	}
+	
+}
+.alert.alert-warning.import {
+	border: #faebcc thin solid
+}
+.aoro-setup {
+	.aoro-select {width: 100% !important;}
+}
+
+// epayroll pay elements mass edit //
+
+.scrolling table.payroll-massedit {
+  table-layout: inherit;
+  *margin-left: -100px;/*ie7*/
+  margin-top: 10px;
+}
+.scrolling table.payroll-massedit td, .scrolling table.payroll-massedit th {
+  vertical-align: top;
+  padding: 10px;
+  min-width: 100px;
+}
+.scrolling table.payroll-massedit th {
+  position: absolute;
+ *position: relative; /*ie7*/
+  left: 0;
+  width: 150px;
+}
+.outer {
+  position: relative
+}
+.inner {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin-left: 150px;
+} 
+
+// field resets //
+.field-100 {width: 100px !important}
+.field-200 {width: 200px !important}
+
+// epayroll reports datatable//
+.no-sort::after { display: none!important; }
+.no-sort { pointer-events: none!important; cursor: default!important; }
+.datatable-checkbox {
+	left: 15px !important;
+.report_table {
+	table-layout: fixed;
+	}
+}
+.epayrollReportdataTable .dataTables_wrapper {
+	width: 925px !important;
+} 
+
+// xero integration //
+.epayrollIntegrations .dataTables_wrapper {
+	width: 925px !important;
+	td {vertical-align: middle;}
+}
+.xero-map {
+	select {width: 300px !important;}
+}
+
+// panel-body reset //
+.panel-padding {
+	padding: 20px 35px !important
+}
+
+// eleave admin //
+.eleaveAdmindataTable .dataTables_wrapper {
+	width: 925px !important;
+} 
+.eleaveAdmin_subnav {
+	li {margin-right: 10px;}
+	li a {
+		padding: 5px 10px !important;
+		background-color: #9b59b6;
+	    border-color: #9b59b6;
+	    color: #FFFFFF;
+	}
+}
+.eleaveAdmin_subnav > li > a:hover, .eleaveAdmin_subnav > li > a:focus {
+    text-decoration: none;
+    background-color: #a86ebf;
+    border-color: #a86ebf;
+    color: #FFFFFF;
+}
+.eleaveAdmin_subnav > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #bd91cf;
+    border-color: #bd91cf;
+    color: #FFFFFF;
+}
+
+//justadmin//
+.adduser-view {
+    margin-bottom: 0;
+    line-height: 32px;
+  }
+
+// .tooltip {
+// 	min-width: 200px;
+// }
+.staffrole-indent {
+	margin-left: 20px;
+}
+// notification bar //
+.notif-dot {
+	height: 8px;
+	width: 8px;
+	background-color: #e74c3c;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	}
+
+// page descriptions//
+.page-description {
+	color: gray;
+}
+
+// eleave //
+.dT-LabelHack {
+	font-weight: bold;
+	vertical-align: bottom !important;
+}
+
+.control-label-left {
+	padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.btn-report-fix {
+	white-space: normal
+}
+
+.modal-xlg {
+	width: 950px;
+}
+
+//user admin //
+#eadmin-active td {
+    vertical-align: middle !important;
+  }
+.btn-import {
+	margin: 2px 0;
+}

@@ -1,0 +1,11 @@
+<h1>Secure Private Page</h1>
+<p>You should only be able to see this once you have logged in!</p>
+<ul>
+    <li><a routerLink="/secure-world">Secure</a> - To access the secure page you will need a token. Generate a token and
+        pass it to the page URL using the query string property token=</li>
+    <li><a routerLink="/hello-world">Public</a> - This page is available to anyone even if they are not logged in.</li>
+</ul>
+
+<h3>Environment Vairables</h3>
+<p>Below are the current environment variables being used. You can load different environment variables by using the <code>--configuration=name-here</code> switch.</p>
+<pre>{{ env | json }}</pre>

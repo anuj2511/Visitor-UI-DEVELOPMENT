@@ -1,0 +1,24 @@
+#IRAS_EmpDeets {
+	th {vertical-align: top}
+	.name {width: 350px !important}
+	select {
+		width: 85px !important
+	}
+	.field-fix {
+		width: 90px !important;
+		white-space: nowrap;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+	}
+}
+
+.popover {
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+}
+.empdeets_view, .amendments_view, #IRAS_OpenBal, #Appendix_BIK, .IR21Appendix {
+	td {
+		vertical-align: middle !important;
+	}
+}

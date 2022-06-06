@@ -1,0 +1,40 @@
+div#fieldChooser {
+  width: 100%;
+  font-size: 12px;
+  margin-top: 10px;
+}
+div#fieldChooser .inline {
+  display: inline-block;
+}
+div#fieldChooser li {
+  list-style: none;
+}
+div#fieldChooser .rating-direction-lr, div#fieldChooser .rating-direction-ud {
+  padding: 0 10px;
+}
+
+.fc-field {
+  margin: 5px;
+}
+
+.fc-field:hover {
+  background-color: #efefef;
+}
+
+.fc-selected {
+  background-color: #ffffff;
+}
+
+.fc-selected:hover {
+  background-color: #ffffff;
+}
+
+.fc-field-list {
+  width: 230px;
+  height: 350px;
+  padding: 3px;
+  overflow: scroll;
+  display: inline-block;
+  border-radius: 4px;
+  border: #ccc thin solid;
+}

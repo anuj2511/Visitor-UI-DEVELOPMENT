@@ -1,0 +1,75 @@
+<div>
+    <p style="font-size: 15px;color: rgb(106 87 204); font-weight: 700;padding-bottom: 20px;"> View Visitor Details</p>
+    <div style="display: grid;grid-template-columns: auto 1fr;column-gap: 1cm;min-height: 17cm;">
+      <div style="height: 100%;background-color: white;border-top: 3.4px solid rgb(107 88 205);width: 11.7cm;">
+        <div style="padding:15px;" id="div1">
+          <div style="display: grid;grid-template-columns: 1fr auto;">
+            <img id="visitorImage" style="height: 3cm;width: 3cm;border: 3.4px solid rgb(107 88 205);" src="">
+            <img style="height: 25px;width: 32px;float: right;" src="assets/images/pencil_gray.png">
+          </div><br><br>
+        </div>
+      </div>
+      <div style="height: 100%;">
+        <div style="height: 60%;background-color: white;border-top: 3.4px solid rgb(107 88 205);">
+          <div style="padding: 10px;">
+            <div style="display: grid;grid-template-columns: 1fr auto;">
+              <p class="fontColor" style="font-size: 17px;font-weight: 700;">Check In Information</p>
+              <img style="height: 25px;width: 32px;float: right;" src="assets/images/pencil_gray.png">
+            </div>
+            <div style="display: grid;grid-template-columns: 1fr 1fr 1fr;" id="checkinInfo" id="div2">
+  
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div style="height:33.2%;background-color: white;border-top: 3.4px solid rgb(107 88 205)">
+          <div style="padding: 10px;">
+            <div style="display: grid;grid-template-columns: 1fr auto;">
+            <p class="fontColor" style="font-size: 17px;font-weight: 700;">Reinvite Visitor</p>
+            <img style="height: 26px;width: 35px;float: right;" src="assets/images/send.png">
+            </div>
+            <div style="display: grid;grid-template-columns: 1fr 1fr 1fr;">
+              <div>
+                <label class="fontColor">Location</label><br>
+                <select style="width: 160px;height: 28px;border-color: #e8e9ea;">
+                  <option>Select Location</option>
+                  <option>Mumbai</option>
+                  <option>Thane</option>
+                </select>
+              </div>
+              <div>
+                <label class="fontColor" >Arrival Date</label><br>
+                <input type="date" style="width: 160px;height: 28px;border: 1px solid #e8e9ea;">
+                <!-- <ejs-daterangepicker [allowEdit]=true [openOnFocus]=true [showClearButton]=true id='daterangepicker'
+              placeholder='Select date'> -->
+              </div>
+              <div>
+                <label class="fontColor" >Expected Arrival Time</label><br>
+                <input type="text" placeholder="Enter arrival time" style="width: 160px;height: 28px;border: 1px solid #e8e9ea;">
+              </div>
+            </div>
+            <br>
+            <div style="display: grid;grid-template-columns: 1fr 1fr 1fr;">
+              <div>
+                <label class="fontColor">Host</label><br>
+                <select style="width: 160px;height: 28px;border-color: #e8e9ea;">
+                  <option>Select Host</option>
+                  <option>Admin</option>
+                  <option>User</option>
+                </select>
+              </div>
+              <div>
+                <label class="fontColor">Purpose</label><br>
+                <input type="text" placeholder="Enter Purpose" style="width: 160px;height: 28px;border: 1px solid #e8e9ea;">
+              </div>
+              <div>
+                <label class="fontColor">Remarks</label><br>
+                <input type="text" placeholder="Enter Remarks" style="width: 160px;height: 28px;border: 1px solid #e8e9ea;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 30px 0px;"><button style=" border-radius: 3px;border: none; width: 100px; height: 40px;" routerLink="/dashboard">Back</button></div>
+  </div>

@@ -1,0 +1,22 @@
+{
+  "HOME": {
+    "TITLE": "Bonjour Angular avec ngx-translate !",
+    "SELECT": "Changer la langue"
+  },
+  "SIDEBAR": {
+    "LEAVE": "Partir",
+    "PAYROLL": "Paie",
+    "ATTENDANCE": "Présence",
+    "EXPENSE": "Frais",
+    "BENEFIT": "Avantage",
+    "PEOPLE": "Gens",
+    "SETTINGS": "Réglages"
+  },
+  "HEADER": {
+    "MYINFO": "Mes infos",
+    "EMPLOYMENT": "Emploi",
+    "DOCUMENTS": "Documents",
+    "NOTES": "Remarques",
+    "TRAINING": "Entraînement"
+  }
+}
