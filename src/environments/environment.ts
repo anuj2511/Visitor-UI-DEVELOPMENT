@@ -40,7 +40,7 @@ export const environment = {
      * This is used in menu.xml (baseUrl) to identify if the side menu link is internal for the application or external
      * NOTE: This section is intended for Express UI data only, don't add application specific variables here.
      */
-    AppRootPath: '/scaffold',
+    AppRootPath: '/visitor-management',
 
     /**
      * The root url for the apis
