@@ -41,5 +41,8 @@ export let data: any= [
     },
     {
         Image:"OscarParker.png",FullName:"Crispin Tate",Email:"CrispinTate@mail.com",ContactNo:8574283485,ExpectedTime:'9:00am',ArrivalTime:'09:05am',date:"2020-08-04",Purpose:'Interview',Host:'Andrew Chen',Location:'Mumbai',VisitorType:'First Time Visitor',Status:'Checked In',Remark:'This is sample remark'
-    }
+    },
+    // {
+    //     Image:"blankImg.png",FullName:"NewVisitor",Email:"",ContactNo:'',ExpectedTime:'',ArrivalTime:'',date:"",Purpose:'',Host:'',Location:'',VisitorType:'',Status:'',Remark:''
+    // }
 	];

@@ -155,3 +155,84 @@ background-color: #000;
 .pagination .page-item.active .page-link:hover {
 background-color: #000;
 }
+
+div.dataTables_length select,  div.dataTables_length label {
+  display: none !important;
+}
+input,select , textarea{border: 1px solid rgb(226 226 226);
+  border-radius: 3px;}
+
+  .pamel-group .panel-heading{
+    background-color: #f7f9fa;
+    color: #333;
+    border-color: #ddd;
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-body{
+    background: #fff;
+    border: 1px solid #e4e5e7;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+}
+
+.addFieldPopup1{position: fixed;
+  width: 730px;
+  left: 47%;
+  margin-left: -230px;
+  top: 20%;
+  z-index: 1000;
+  border: 1px
+  solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+  background: #fff;
+  animation: alertshow .2s ease;
+  max-height: 11cm;
+  overflow: scroll;
+}
+.addFieldPopup2{
+  font-size: 14px;
+  text-align: left;
+  box-sizing: border-box;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.42857143;
+  color: #333;
+  webkit-tap-highlight-color: rgba(0,0,0,0);}
+  .addFieldPopup3{text-align: center;
+    border-top: 1px solid #ccc;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;}
+.addFieldPopupbutton{background: rgb(238, 239, 240);
+    border: solid 1px rgb(218, 222, 224);
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(66, 66, 66);
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-left: 4px;
+    cursor: pointer;
+    ine-height: inherit;
+    -webkit-appearance: button;
+    text-transform: none;
+    margin: 0;
+    font: inherit;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    border-radius: 3px;
+    border: none;
+    width: 85px;
+    height: 33px;
+    margin-top: 12px;}
+  #addFieldPopup{display: none;} 

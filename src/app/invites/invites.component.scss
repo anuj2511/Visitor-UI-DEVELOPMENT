@@ -113,3 +113,18 @@ div.dataTables_wrapper div.dataTables_length select {padding: 3px !important;
   }
   input,select , textarea{border: 1px solid rgb(226 226 226);
     border-radius: 3px;}
+    .pamel-group .panel-heading{
+      background-color: #f7f9fa;
+      color: #333;
+      border-color: #ddd;
+      padding: 10px 15px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+  }
+  .panel-body{
+      background: #fff;
+      border: 1px solid #e4e5e7;
+      border-radius: 2px;
+      padding: 20px;
+      position: relative;
+  }

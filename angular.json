@@ -49,6 +49,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.js",
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/vendor/jquery-ui/jquery-ui.min.js",
               "src/assets/vendor/slimScroll/jquery.slimscroll.min.js",
@@ -66,9 +67,8 @@
               "src/assets/vendor/datatables_plugins/sorting/date-dd-MMM-yyyy.js",
               "node_modules/drag-drop-polyfill/drag-drop-polyfill.min.js",
               "node_modules/drag-drop-polyfill/drag-drop-polyfill-scroll-behaviour.min.js",
-              "node_modules/jquery/dist/jquery.js",
+              
               "node_modules/datatables.net/js/jquery.dataTables.js",
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/datatables.net/js/jquery.dataTables.min.js"
             ],
             "es5BrowserSupport": true

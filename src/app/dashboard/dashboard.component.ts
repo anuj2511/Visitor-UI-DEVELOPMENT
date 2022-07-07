@@ -6,6 +6,8 @@ import { checkinInfo } from '../checkinInfo';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
+import { VisitorApiService } from '../visitor-api.service';
+import { ToastRef, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +16,7 @@ import { DataTableDirective } from 'angular-datatables';
 })
 export class DashboardComponent implements OnInit, AfterViewInit ,OnChanges{
   public data: object[];
+  public popupData : object[];
   public columns: any
   public start: Date;
   public end: Date;
@@ -32,11 +35,13 @@ export class DashboardComponent implements OnInit, AfterViewInit ,OnChanges{
   dtTrigger: Subject<any> = new Subject();
   @ViewChild(DataTableDirective, {static: false})
   dtElement: DataTableDirective;
-  constructor(private Router: Router,private ActivatedRoute: ActivatedRoute) { }
+  constructor(private Router: Router,private ActivatedRoute: ActivatedRoute,private ApiService: VisitorApiService,public toaster: ToastrService) { }
 
   ngOnInit(): void {
     this.rerender();
+    this.invitedVisitors();
     this.data = data;
+    this.popupData = data;
     this.original_data = data;
     this.numberOfEntries = data.length;
     this.viewVisitorStructure = viewVisitorFields
@@ -51,15 +56,15 @@ export class DashboardComponent implements OnInit, AfterViewInit ,OnChanges{
         'targets': [0], /* column index [0,1,2,3]*/
         'orderable': false, /* true or false */
     }],
-    columns: [
-      { "width": "5%" },
-      { "width": "15%" },
-      { "width": "20%" },
-      { "width": "15%" },
-      { "width": "15%" },
-      { "width": "15%" },
-      { "width": "15%" }
-  ]
+  //   columns: [
+  //     { "width": "5%" },
+  //     { "width": "15%" },
+  //     { "width": "20%" },
+  //     { "width": "15%" },
+  //     { "width": "15%" },
+  //     { "width": "15%" },
+  //     { "width": "15%" }
+  // ]
     };
     for (let i in data) {
       this.images[i] = data[i].Image
@@ -92,9 +97,12 @@ export class DashboardComponent implements OnInit, AfterViewInit ,OnChanges{
     this.data = resultProductData;
   }
   redirectToVisitorProfile(name){
-    var name:any = name.split(" ")[0] + "_" + name.split(" ")[1]
-    this.Router.navigate(['/visitorprofile'], { queryParams: { Name: name } });
-
+    if(name=== 'New'){
+      this.Router.navigate(['/visitorprofile'], { queryParams: { id: "NewVisitor" } });
+    }else{
+      var name:any = name.split(" ")[0] + "_" + name.split(" ")[1]
+      this.Router.navigate(['/visitorprofile'], { queryParams: { id: name } });
+    }
   }
   showDropdown(){
     var checkList = document.getElementById('list1');
@@ -123,4 +131,27 @@ key:string = 'id';
       $('.'+id).hide();
     }
   }
+  invitedPopup(){
+    $('#addFieldPopup').show();
+  }
+  hideinvitePopup(){
+    $('#addFieldPopup').hide();
+  }
+  invitedVisitors(){
+    const _self = this;
+     $.ajax({
+      url: "",
+      type: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + this.ApiService.Token
+      },
+      success: function (res) {
+        this.popupData = res;
+      }, error(err) {
+        _self.toaster.error('Sorry there was a problem while loading invited visitors list. Please try again.');
+      }
+    });
+  }
+
 }

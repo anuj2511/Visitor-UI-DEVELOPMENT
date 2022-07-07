@@ -59,9 +59,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of data" height="55px">
+              <tr *ngFor="let user of data" height="54px">
                 <td width="10px"><input type="checkbox"></td>
-                <td width="50px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
+                <td width="40px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
                   style="width: 50px;height: 50px;" /></td>
                 <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.FullName)" id="{{user.FullName}}">{{ user.FullName }}</td>
                 <td class="Email">{{ user.Email }}</td>
@@ -99,29 +99,31 @@
         <div style="border-bottom: 3px solid rgb(0 141 211);width: 3cm;text-align: center;height: 27px;">Single Invite</div>
         <br>
         <label> Visitor Name</label><br>
-        <input type="text" placeholder="Enter Full Name" style="width: 100%;height: 28px;" class="sendInvite"
-          id="Fullname"><br><span class="brsmall"></span>
+        <input ngui-auto-complete [source]="temp_data" [list-formatter]="listFormatter" [value-formatter]="valueListFormatter" value-property-name="email" display-property-name="name" type="text" placeholder="Enter Full Name" style="width: 100%;height: 28px;" class="sendInvite"
+          id="Fullname" (keypress)="onkeyPressData('name')" (keyup)="onkeyPressData('name')" (focusout)="onkeyPressData('name')" (valueChanged)="getVisitor($event)">
+          <input type="text" style="display: none;" id="NameId">
+          <br><span class="brsmall"></span>
         <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
           <div>
             <label> Visitor Email </label>&nbsp;&nbsp;&nbsp;&nbsp;<input (click)="showPreview($event.target.checked)"
               type="checkbox" checked>&nbsp;Send an Invite Email<br>
-            <input type="text" placeholder="Enter email" style="height: 28px;width: 7cm;">
+            <input type="text" placeholder="Enter email" style="height: 28px;width: 7cm;" id="inviteEmail" (keypress)="onkeyPressData('email')" (keyup)="onkeyPressData('email')">
           </div>
           <div>
             <label>Contact No.</label><br>
-            <input type="text" placeholder="Enter contact no." style="width: 7cm;;height: 28px;">
+            <input type="text" placeholder="Enter contact no." style="width: 7cm;;height: 28px;" id="inviteContact" (keypress)="onkeyPressData('contact')" (keyup)="onkeyPressData('contact')">
           </div>
         </div><span class="brsmall"></span>
         <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
           <div>
             <label> Purpose</label><br>
-            <input type="text" placeholder="Enter email" style="width:7cm;height: 28px;">
+            <input type="text" placeholder="Enter email" style="width:7cm;height: 28px;" id="invitePurpose" (keypress)="onkeyPressData('purpose')" (keyup)="onkeyPressData('purpose')">
           </div>
           <div>
             <label>Host.</label><br>
-            <select style="height: 28px;width: 7cm;">
+            <select style="height: 28px;width: 7cm;" id="inviteHost"> 
               <option>Select Host</option>
-              <option>Andrew Garfield</option>
+              <option>Andrew Chen</option>
             </select>
           </div>
         </div><span class="brsmall"></span>
@@ -145,13 +147,15 @@
         <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
           <div>
             <label> Arrival Date</label><br>
-            <input type="Date" style="width:7cm;height: 28px;">
+            <input type="datetime-local" style="width:7cm;height: 28px;" id="inviteArrivalDate" (change)="onkeyPressData('date')">
           </div>
           <div>
             <label>Arrival Time</label><br>
-            <select style="height: 28px;width: 7cm;">
+            <select style="height: 28px;width: 7cm;" id="inviteArrivalTime"  (change)="onkeyPressData('time')">
               <option></option>
-              <option>9:00am</option>
+              <option value="09:00:00">9:00</option>
+              <option value="10:00:00">10:00</option>
+              <option value="11:00:00">11:00</option>
             </select>
           </div>
         </div><span class="brsmall"></span>
@@ -209,8 +213,8 @@
       <button style=" border-radius: 3px;border: none; width: 100px; height: 33px;" (click)="showBoard()">Back</button>
       <div style="float: right;">
         <button style=" border-radius: 3px;border: none; height: 33px;">Invite and add Another</button>&nbsp;&nbsp;
-        <button (click)="Invite()"
-          style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 85px;height: 33px;float: right;">Invite</button>
+        <!-- <button (click)="Invite()" style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 85px;height: 33px;float: right;">Invite</button> -->
+        <button (click)="inviteVisitor()" style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 85px;height: 33px;float: right;">Invite</button>
       </div>
     </div>
   </div>
