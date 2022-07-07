@@ -1,0 +1,335 @@
+<ul>
+  <li><a routerLink="/dashboard">Dashboard</a></li>
+  <li><a routerLink="/invites">Invites</a></li>
+  <li><a routerLink="/configuration">Configuration</a></li>
+</ul>
+<div class="page-content-wrap">
+  <div style="background-color: #f0f2f5;margin-left: 29px;margin-right: 25px;" id="inviteBoard">
+
+    <div>
+      <p
+        style="color: rgb(116, 116, 116);margin: 30px 0px 10px; margin: 80px 0px 0px;background-color: white;padding: 10px;width: fit-content;font-weight: 700;">
+        &nbsp;Invites&nbsp;</p>
+    </div>
+    <div style="background-color:white;padding: 32px;padding-bottom: 15px;">
+      <p style="font-weight: 600;color: rgb(116, 116, 116)">Send Invites individually to people you are expecting to come to the office.</p>
+
+      <span class="brsmall"></span>
+      <div style="display: grid;grid-template-columns: 4fr 6fr;column-gap: 32px; width: 100%;padding-bottom: 20px;">
+        <div
+          style="display: grid;grid-template-columns: 145px 200px;column-gap: 32px; width: fit-content;padding: 20px 20px 0px 0px;">
+          <div>
+            <div style="color: #727272;font-weight: 600;margin-bottom: 6px;"><span>Date:</span></div>
+            <span class="brsmall"></span>
+            <div style="display: grid;grid-template-columns: auto auto auto;">
+              <div style="width: 137px;"><button type="button" style="height: 33px;background-color: white;width: 33px;border: 1px solid rgb(239 240 241);border-radius: 5px 0px 0px 5px"><span class="textColor"><</span> </button><button style="height: 33px;background-color: #f4f4f4;width: 64px;border: 1px solid rgb(239 240 241);" type="button" disabled><span style="color: rgb(117 117 117);font-weight: 600;">Today</span></button><button style="height: 33px;background-color: white;width: 33px;border: 1px solid rgb(239 240 241);border-radius: 0px 5px 5px 0px" type="button"> <span class="textColor">></span> </button></div>
+            </div>
+          </div>
+          <div style="margin-left: -36px;">
+            <div style="color: #727272;font-weight: 600;margin-bottom: 6px;"><span
+                style="margin-left: 5px;">Period:</span></div>
+            <span class="brsmall"></span>
+            <ejs-daterangepicker [allowEdit]=false [openOnFocus]=true [showClearButton]=false id='daterangepicker'
+              placeholder='&nbsp;&nbsp; &nbsp;Select date range' [startDate]='start' [endDate]='end'
+              (change)="ranged()">
+            </ejs-daterangepicker>
+          </div>
+        </div>
+        <div>
+          <button
+            style="background-color: #62cb31;color: white;border-radius: 3px;border: none;width: 89px;height: 33px;float: right;"
+            (click)="sendInvite()">Send Invite</button>
+        </div>
+      </div>
+
+      <div id="dashboard">
+        <div class="control-section">
+          <table datatable  class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions">
+            <thead>
+              <tr>
+                <th width="3px"></th>
+                <th id="images" width="50px"></th>
+                <th class="FullName">FullName</th>
+                <th class="Email">Email</th>
+                <th class="ContactNo">ContactNo</th>
+                <th class="Host">Host</th>
+                <th class="Purpose">Purpose</th>
+                <th class="ExpectedTime">Expected Arrival Time</th>
+                <th class="ArrivalTime">Arrival Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of data" height="54px">
+                <td width="10px"><input type="checkbox"></td>
+                <td width="40px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
+                  style="width: 50px;height: 50px;" /></td>
+                <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.FullName)" id="{{user.FullName}}">{{ user.FullName }}</td>
+                <td class="Email">{{ user.Email }}</td>
+                <td class="ContactNo">{{ user.ContactNo }}</td>
+                <td class="Host">{{ user.Host }}</td>
+                <td class="Purpose">{{ user.Purpose }}</td>
+                <td class="ExpectedTime">{{ user.ExpectedTime }}</td>
+                <td class="ArrivalTime">{{ user.ArrivalTime }}</td>
+              </tr>  
+            </tbody>
+          </table>
+          <div style="width: 100%;background-color: white;min-height: 110px;">
+            <div style="padding:15px 0px 15px;display: grid;grid-template-columns: 1fr auto">
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid rgb(221 221 221); padding: 10px;"></div>
+          <div style="padding: 14px 0px 9px;display: grid;grid-template-columns: 14fr 1fr;">
+            <button style="border-radius: 3px;border: none; width: 85px; height: 33px;">Delete</button>
+            <button style="border-radius: 3px;border: none; width: 85px; height: 33px;float: right;">Check In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="background-color: #f0f2f5;margin-left: 29px;margin-right: 25px;" id="sendInviteDiv">
+    <div>
+      <p
+        style="color: rgb(116, 116, 116);margin: 30px 0px 10px; margin: 80px 0px 0px;background-color: white;padding: 10px;font-weight: 900;font-size: 12px;">
+        Invites</p>
+    </div>
+    <div style="display: grid;grid-template-columns: 1fr 1fr;">
+      <div style="background-color:white;padding: 23px 0px 20px 32px;font-size: 12px;color:#8e8e8e;">
+        <div style="border-bottom: 3px solid rgb(0 141 211);width: 3cm;text-align: center;height: 27px;">Single Invite</div>
+        <br>
+        <label> Visitor Name</label><br>
+        <input ngui-auto-complete [source]="temp_data" [list-formatter]="listFormatter" [value-formatter]="valueListFormatter" value-property-name="email" display-property-name="name" type="text" placeholder="Enter Full Name" style="width: 100%;height: 28px;" class="sendInvite"
+          id="Fullname" (keypress)="onkeyPressData('name')" (keyup)="onkeyPressData('name')" (focusout)="onkeyPressData('name')" (valueChanged)="getVisitor($event)">
+          <input type="text" style="display: none;" id="NameId">
+          <br><span class="brsmall"></span>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
+          <div>
+            <label> Visitor Email </label>&nbsp;&nbsp;&nbsp;&nbsp;<input (click)="showPreview($event.target.checked)"
+              type="checkbox" checked>&nbsp;Send an Invite Email<br>
+            <input type="text" placeholder="Enter email" style="height: 28px;width: 7cm;" id="inviteEmail" (keypress)="onkeyPressData('email')" (keyup)="onkeyPressData('email')">
+          </div>
+          <div>
+            <label>Contact No.</label><br>
+            <input type="text" placeholder="Enter contact no." style="width: 7cm;;height: 28px;" id="inviteContact" (keypress)="onkeyPressData('contact')" (keyup)="onkeyPressData('contact')">
+          </div>
+        </div><span class="brsmall"></span>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
+          <div>
+            <label> Purpose</label><br>
+            <input type="text" placeholder="Enter email" style="width:7cm;height: 28px;" id="invitePurpose" (keypress)="onkeyPressData('purpose')" (keyup)="onkeyPressData('purpose')">
+          </div>
+          <div>
+            <label>Host.</label><br>
+            <select style="height: 28px;width: 7cm;" id="inviteHost"> 
+              <option>Select Host</option>
+              <option>Andrew Chen</option>
+            </select>
+          </div>
+        </div><span class="brsmall"></span>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
+          <div>
+            <label>Location</label><br>
+            <select style="height: 28px;width: 7cm;">
+              <option>Select location</option>
+              <option>Mumbai</option>
+            </select>
+          </div>
+          <div>
+            <label>Visitor Type.</label><br>
+            <select style="height: 28px;width:7cm;">
+              <option>Visitor</option>
+              <option>Type1</option>
+            </select>
+          </div>
+        </div>
+        <span class="brsmall"></span>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
+          <div>
+            <label> Arrival Date</label><br>
+            <input type="datetime-local" style="width:7cm;height: 28px;" id="inviteArrivalDate" (change)="onkeyPressData('date')">
+          </div>
+          <div>
+            <label>Arrival Time</label><br>
+            <select style="height: 28px;width: 7cm;" id="inviteArrivalTime"  (change)="onkeyPressData('time')">
+              <option></option>
+              <option value="09:00:00">9:00</option>
+              <option value="10:00:00">10:00</option>
+              <option value="11:00:00">11:00</option>
+            </select>
+          </div>
+        </div><span class="brsmall"></span>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 46px;">
+          <div>
+            <label>Repeat</label><br>
+            <select style="height: 28px;width: 7cm;">
+              <option>Does not repeat</option>
+              <option>every weekday (Mon- Fri)</option>
+              <option>Daily</option>
+              <option>Weekly</option>
+              <option>Monthly</option>
+              <option>Yearly</option>
+            </select>
+          </div>
+          <div>
+            <label>Ends</label><br>
+            <input type="Date" style="width:7cm;height: 28px;">
+          </div>
+        </div><span class="brsmall"></span>
+        <label>Remarks</label>
+        <textarea style="width:100%;height: 60px;resize: none;" placeholder="Enter Remarks"></textarea>
+      </div>
+      <div style="background-color:white;padding: 59px 38px 20px;font-size: 12px;">
+        <label style="color:#8e8e8e;">Email Preview</label>
+        <div id="preview"
+          style="padding: 20px; border: 1px solid black;border-top: 4px solid rgb(107 88 205);min-height: 10.7cm;">
+          <div style="color: rgb(63 63 63);"><b>Invitation to #Company#</b></div>
+          <div style="border-bottom: 1px solid gray; padding: 0px 20px 20px 20px;width: 100%;"></div>
+          <div style="font-size: 10px;padding-top: 21px;">
+            Hi {{FullName}} <br><br>
+            You are invited to visit {{Location}} on<b> {{ArrivalDate}} {{ArrivalTime}}.</b><br>
+            Your host is<b> {{HostName}}</b><br><br>
+            <b>Address:</b><br>
+            {{LocationAddress}}<br>
+            <a><u>Get directions</u></a><br><br>
+            <b>Register for your visit:</b><br>
+            All visitors are required to complete visitor registration. For safety, you can use your own device to
+            avoid
+            touching a shared tablet.<br><br>
+            <button
+              style=" border-radius: 3px;border: none; width: 80px; height: 33px;background-color: #6a57cc;color: white;font-weight: 300;font-weight: 300;font-size: 11px;">Register
+              now</button><br>
+          </div>
+        </div>
+        <div style="color: gray;text-align: center;padding: 45px;" id="noPreview">
+          <img style="padding: 15px;" style="height: 190px;" src="assets/images/noEmailPreview.png"><br>
+          <b>No email to preview.</b><br>
+          If you want to send an email invitation, check <b> Send an invite email</b> option.
+        </div>
+      </div>
+    </div>
+    <div style="background-color:white;padding: 0px 32px 32px 32px;">
+      <div style="border-bottom: 1px solid rgb(150, 150, 150); padding: 0px 20px 20px 20px;width: 100%;"></div><br>
+      <button style=" border-radius: 3px;border: none; width: 100px; height: 33px;" (click)="showBoard()">Back</button>
+      <div style="float: right;">
+        <button style=" border-radius: 3px;border: none; height: 33px;">Invite and add Another</button>&nbsp;&nbsp;
+        <!-- <button (click)="Invite()" style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 85px;height: 33px;float: right;">Invite</button> -->
+        <button (click)="inviteVisitor()" style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 85px;height: 33px;float: right;">Invite</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="width: 7cm;text-align: center;background-color: white;margin-left: 11cm;" id="EmailPopup">
+  <div class="topBar" style="max-width: 9cm;"></div><br>
+  <div style="padding: 10px;font-size: 11px;">
+  <b> Welcome to <br>
+    MHR Manpower Inc</b><br>
+  Have you visited us before?<br><br><br>
+  <div style="background-color: #f2f1fa;padding: 10px;border-radius: 5px;color: rgb(130 123 208);" (click)="firstTimeVisitor()"><u>I am a first
+      time visitor.</u>
+  </div><br>
+  <div style="background-color: #f2f1fa;padding: 10px;border-radius: 5px;">If you are a returning visitor,<br> please
+    enter your email address below <br> <br><input type="text"
+      style="border: 2px solid #7c75ce;height: 30px;width: 190px;border-radius: 0;box-shadow: 0 0 2px #7c75ce;" placeholder="Email"><button
+      style="background-color: #7c75ce;color: white;height: 30px;border: none;" (click)="notTimeVisitor()">GO</button></div>
+  <br><br><br><br><br><br><br><br><br><br>
+  <img style="padding: 15px;" src="assets/images/logo/logo.png">
+</div>
+</div>
+
+<div class="addFieldPopupTop" id="RegisterNow">
+  <div class="addFieldPopup1" id="RegisterNow1" style="border-top: 4.5px solid rgb(107 88 205);">
+    <div class="addFieldPopup2">
+      <div style="padding: 35px;">
+        <b>Invitation to AquatiCo</b>
+        <div style="border-bottom: 1px solid rgb(221 221 221); padding: 10px;"></div>
+        <div style="padding-top: 20px;">
+          Hi {{FullName}} <br><br>
+          You are invited to visit {{Location}} on <b>{{ArrivalDate}} {{ArrivalTime}}.</b><br>
+          Your host is <b>{{HostName}}</b><br><br>
+          <b>Address:</b><br>
+          {{LocationAddress}}<br>
+          <a style="font-size: 10px;"><u>Get directions</u></a><br><br>
+          <b>Register for your visit:</b><br>
+          All visitors are required to complete visitor registration. For safety, you can use your own device to
+          avoid
+          touching a shared tablet.<br><br>
+        </div>
+        <button (click)="registerNow()"
+          style=" border-radius: 3px;border: none; width: 100px; height: 31px;background-color: #6a57cc;color: white;font-weight: 300;font-size: 12px;">Register now</button><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- After Register Now -->
+
+<div style="height: 100%;width: 8cm;margin-left: 11cm;font-size: 11px;" id="firstTimeVisitor">
+  <div class="topBar" style="max-width: 9cm;"></div>
+  <div style="background-color: white;height: 100%;max-width: 9cm;padding: 30px;">
+    <div>
+      <p style="text-align: center;">MHR Manpower Inc Visitor Information</p><br>
+      <div id="takePhoto" style="display: flex;justify-content: center;"><img src="assets/images/TakePhoto.png"
+          alt="take photo" width="36" height="31"></div>
+      <div style="display: flex;justify-content: center;margin-bottom: 20px;margin-top: 5px;">
+        <div style="color: rgb(149 143 215);">Take Photo</div>
+      </div>
+      <input class="inputBox" type="text" placeholder="Email"><br>
+      <input class="inputBox" type="text" placeholder="Full Name"><br>
+      <input class="inputBox" type="text" placeholder="NRIC/FIN/Passport No. for SafeEntry"><br>
+      <input class="inputBox" type="text" placeholder="Mobile No."><br>
+      <input class="inputBox" type="text" placeholder="Person to Visit"><br>
+      <input class="inputBox" type="text" placeholder="Purpose of Visit"><br>
+      <div style="text-align: center;font-size: 12px;">By checking in, I agree to <a href="/">this</a> declarartion
+      </div><br>
+      <div style="border-bottom: 1px solid rgb(195, 195, 195);"></div>
+      <button (click)="showThankYou()" class="preCheckIn"
+        style="background-color: #7c75ce;color:white;width: 100%;height:32px;border: none;border-radius: 5px;margin-bottom: 11px;">SUBMIT</button><br>
+        <div style="text-align: center;" class="preCheckIn">
+          <div style="font-size: 11px;color: #979797;">This page will expire in <a style="color: black;">04:32</a></div>
+        </div>
+      <div class="checkIn">
+        <button style="width: 100%;height:32px;border: none;border-radius: 5px;margin-bottom: 11px;">Edit</button><br>
+
+        <button
+          style="background-color: #98dd78;color:white;width: 100%;height:32px;border: none;border-radius: 5px;">CHECK
+          IN</button><br>
+          <div style="color: rgb(196 196 196);font-size: 9px;margin-bottom: 25px;text-align: center;">This button will only be enabled when you are in the premises.</div>
+      </div>
+      <div style="text-align: center;">
+        <img style="padding: 15px;" src="assets/images/logo/logo.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- After Register Now -->
+<div style="width: 17cm;height:12cm;margin-left: 9.5cm;width: 16cm;" id="thankYou">
+  <div style="background-color: white;border-top: 2.8px solid rgb(119 9 223);width: 17cm;height: 9cm;">
+    <div style="padding: 25px;"><b>Thank you for registering.</b></div>
+    <div style="padding: 0px 25px;">
+      <div style="border-bottom: 1px solid #e8e3e3;"></div>
+    </div>
+    <div style="padding: 25px;">
+      Hi Amanda,
+      <br>
+      <div style="margin-top: 11px;">
+        We have received your registration. See you on <b>Wednesday, 01/09/2021 at 9:00am.</b><br>
+        Your host is<b> Andrew Chen.</b></div>
+      <br>
+      <b>Please check in when you come to the office.</b>
+      <br>
+      Click on the Check in button in the form as soon as you come to the office and we will notify yor host.
+      <br>
+      <button
+        style="margin-top: 20px;background-color: #6b65b2;color:white;width: 3cm;height:32px;border: none;border-radius: 5px;margin-bottom: 11px;">CHECK
+        IN</button>
+    </div>
+  </div>
+  <div style="text-align: center;margin-top: 25px;">
+    This is a system generated email. Please do not reply to this email.<br>
+    <img style="padding: 15px;" src="assets/images/logo/logo.png">
+  </div>
+</div>

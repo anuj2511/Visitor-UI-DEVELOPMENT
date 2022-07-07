@@ -1,0 +1,267 @@
+<ul>
+    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/invites">Invites</a></li>
+    <li><a routerLink="/configuration">Configuration</a></li>
+</ul>
+
+<div class="page-content-wrap">
+    <div style="background-color: #f0f2f5;margin-left: 29px;margin-right: 25px;">
+      <div style="background-color: white;">
+        <p
+          style="color: rgb(116, 116, 116);margin: 30px 0px 10px; margin: 80px 0px 0px;background-color: white;padding: 10px;border-bottom:1px solid gray;">
+          Configuration</p>
+  
+        <div style="margin: 15px;">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default" style="border: 1px solid #e8e8e8;">
+              <div class="panel-heading ">
+                <a class="accordion-toggle Heading1" data-toggle="collapse" data-parent="#accordion"
+                  href="#collapseFormSettings">
+                  <p class="panel-title pad-left-panel" style="color: black;font-size: 13px;"><b>FORM SETTINGS</b></p>
+                </a>
+  
+              </div>
+              <div id="collapseFormSettings" class="panel-collapse collapse in">
+                <div class="panel-body padding-panel-body panel-bg">
+                  <div style="border-bottom: 1px solid gray;">
+                    <div>
+                      Add, edit or customize fields in your visitor registration form.
+                    </div>
+                    <br>
+                    <div style="display: grid;grid-template-columns:  1fr auto;column-gap: 32px; width: fit-content;">
+                      <div class="control-section" style="width: 19cm;">
+                        <!-- <ejs-grid #grid [dataSource]='configurationData' (headerCellInfo)="headerCellInfo($event)">
+                          <e-columns>
+                            <e-column field='Field' headerText='Field' width='120' textAlign='Left'></e-column>
+                            <e-column field='FieldType' headerText='Field Type' width='120' textAlign='Left'></e-column>
+                            <e-column field='Mandatory' headerText='Mandatory' width='120'>
+                              <ng-template #template let-configurationData>
+                                <div>
+                                  <ejs-checkbox [checked]=configurationData.Mandatory class={{configurationData.Field}}>
+                                  </ejs-checkbox>
+                                </div>
+                              </ng-template>
+                            </e-column>
+                            <e-column field='Action' headerText='Action' width='120' textAlign='Left'>
+                              <ng-template #template let-configurationData>
+                                <td>
+                                  <div class="image">
+                                    <img src="assets/images/{{configurationData.Actions.action1}}"
+                                      style="height: 18px;" />
+                                    <img src="assets/images/{{configurationData.Actions.action2}}"
+                                      style="height: 18px;" />
+                                  </div>
+                                </td>
+                              </ng-template>
+                            </e-column>
+                          </e-columns>
+                        </ejs-grid> -->
+                        <table datatable  class="table table-striped  table-sm row-border hover" [dtOptions]="dtOptions" style="width: 868px !important;">
+                          <thead>
+                            <tr>
+                              <th class="Field">Field</th>
+                              <th class="FieldType">Field Type</th>
+                              <th class="Mandatory">Mandatory</th>
+                              <th class="Action">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let user of configurationData" >
+                              <td class="Field" >{{ user.Field }}</td>
+                              <td class="FieldType">{{ user.FieldType }}</td>
+                              <td class="Mandatory"><input type="checkbox"></td>
+                              <td class="Action"><img src="assets/images/{{user.Actions.action1}}" alt="{{user.Actions.action1}}"
+                                style="height: 18px;" /><img src="assets/images/{{user.Actions.action2}}" alt="{{user.Actions.action1}}"
+                                style="height: 18px;" /></td>
+                            </tr>  
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <b>Preview</b>
+                        <div style="background-color: #eaeaea;width: 8cm;margin: 0px 30px 10px 0px;">
+                          <div style="padding: 10px;" id="preview">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="color: rgb(36 232 12);font-weight: 700;cursor: pointer;" (click)="addFieldPopup()"> + Add
+                      custom fields</div>
+                  </div>
+                  <div style="float: right;">
+                    <button class="saveButton">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a class="accordion-toggle Heading1" data-toggle="collapse" data-parent="#accordion"
+                  href="#collapseVisitorPoster">
+                  <p style="color: black;font-size: 13px;" class="panel-title pad-left-panel"><b>VISITOR POSTER</b></p>
+                </a>
+              </div>
+              <div id="collapseVisitorPoster" class="panel-collapse collapse">
+                <div class="panel-body panel-bg padding-panel-body">
+                  A QR code has been generated for your company. Customise a visitor poster for your door or generate a
+                  link to use.<br>
+                  <div style="display: grid;grid-template-columns: 2fr auto;">
+                    <div>
+                  <input type="checkbox">Add SafeEntry check in information to Visitor's QR</div>
+                  <div>
+                    <button style="background-color: rgb(36 232 12);color: white;border-radius: 3px;border: none;width: 115px;height: 33px;float: right;">Send Visitor QR</button>
+                  </div>
+                  </div>
+                  <br>
+                  <div style="background-color: #f4f4f4;">
+                    <div style="display: grid;grid-template-columns: 2fr auto auto ;">
+                      <div style="padding: 20px 0px 20px 0px;">
+                        <label style="margin-left: 18px;width: 5cm;">App Id: <i class="fa fa-info-circle" aria-hidden="true"></i></label><input
+                          style="width: 13cm;height: 32px;" type="text"
+                          placeholder="Enter your App ID(for SafeEntry only)"><br>
+                        <label style="margin-left: 5.5cm;width: 10cm;color: rgb(36 232 12);cursor: pointer;">want to get
+                          App ID?</label><br>
+                        <label style="margin-left: 18px;width: 5cm;">Location Name : </label><input
+                          style="width: 13cm;height: 32px;" type="text" placeholder="Enter location name"><br><br>
+                        <label style="margin-left: 18px;width: 5cm;">Location Address:</label><input
+                          style="width: 13cm;height: 32px;" type="text" placeholder="Enter location address">
+                      </div>
+                      <div>
+                        <img src="assets/images/QR.png" style="height:175px;width: 129px;padding: 7px;">
+                      </div>
+                      <div style="padding: 25px 23px 22px 8px">
+                        <button style="width: 5cm;height: 28px;color: white;background-color: rgb(60 60 173);" (click)="previewPoster()">Preview Visitor Poster</button><br><span class="brsmall"></span>
+                        <button style="width:5cm;height: 28px;color: white;background-color: rgb(60 60 173);">Download Visitor Poster</button><br><span class="brsmall"></span>
+                        <button style="width: 5cm;height: 28px;color: rgb(26, 23, 23);background-color: rgb(232 231 231);border: none;">Copy Link</button><br><span class="brsmall"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div style="border-bottom: 1px solid rgb(192, 192, 192);"></div>
+                  <div style="float: right;">
+                    <button class="saveButton">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Add Field Popup start -->
+      <div class="addFieldPopupTop" id="addFieldPopupTop">
+        <div class="addFieldPopup1" id="addFieldPopup">
+          <div class="addFieldPopup2">
+            <div class="topBar"></div>
+            <div
+              style="height: 60px;text-align: center ;background-color: #f6f6f6;padding: 20px;font-weight: 700;color: #5a5656;">
+              Add Custom Field
+            </div>
+            <div style="padding: 28px;">
+              <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 10px;">
+                <div><b>Field Label*</b> <br><input type="text" id="fieldLabel" placeholder="Enter field label"
+                    (keyup)="updatePreview1()"></div>
+                <div><b>Field Type*</b> <br> <select style="width: 100%;
+                min-height: 57%;
+                max-height: 62%;" id="fieldType" (focusout)="updatePreview1()">
+                    <option value="">Select field type</option>
+                    <option value="text">Text</option>
+                    <option value="dropdown">Dropdown</option>
+                  </select></div>
+              </div>
+              <br>
+              <div id="dropdownOption" (keyup)="updatePreview1()">
+                <div style="display: grid;grid-template-columns: 1fr 1fr;">
+                  <p><b>Dropdown option</b></p>
+                  <p style="text-align: right;" (click)="addMoreDropdown()">+Add more</p>
+                </div>
+                <input style="width:100%" type="text" id="dropdownOption1" placeholder="option 1">
+                <div id="dropdownOptionNew">
+                </div>
+              </div>
+              <br>
+              <b>Mandatory </b>
+              <br>
+              <select style="width: 50%;height: 25px;" id="Mandatory" (focusout)="updatePreview1()">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <br>
+              <br>
+              <b>Preview</b>
+              <div style="background-color: #eaeaea;height: 57px;width: 100%;">
+                <div style="padding: 10px;" id="preview1">
+                </div>
+              </div>
+  
+            </div>
+          </div>
+          <div class="addFieldPopup3" style="height: 57px;">
+            <button class="addFieldPopupbutton" (click)="addField('close')">Close</button>
+            <span style="width: 20px;"> </span>
+            <button class="sendButton" (click)="addField('send')">Send</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add Field Popup finish -->
+  
+      <!-- Preview Visitor postor popup start -->
+      <div class="addFieldPopupTop" id="PreviewPostor">
+        <div class="addFieldPopup1" id="PreviewPostor1">
+          <div class="addFieldPopup2">
+            <div class="topBar"></div>
+            <div
+              style="height: 60px;text-align: center ;background-color: #f6f6f6;padding: 20px;font-weight: 700;color: #5a5656;">
+              <div style="display: grid;grid-template-columns: 1fr 1fr;">
+                <p>Customise QR Template</p>
+                <p>Preview</p>
+              </div>
+            </div>
+            <div style="padding: 28px;">
+              <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 10px;">
+                <div><b>Field Label*</b> <br><input type="text" id="fieldLabel" placeholder="Enter field label"
+                    (keyup)="updatePreview1()"></div>
+                <div><b>Field Type*</b> <br> <select style="width: 100%;
+                min-height: 57%;
+                max-height: 62%;" id="fieldType" (focusout)="updatePreview1()">
+                    <option value="">Select field type</option>
+                    <option value="text">Text</option>
+                    <option value="dropdown">Dropdown</option>
+                  </select></div>
+              </div>
+              <br>
+              <div id="dropdownOption" (keyup)="updatePreview1()">
+                <div style="display: grid;grid-template-columns: 1fr 1fr;">
+                  <p><b>Dropdown option</b></p>
+                  <p style="text-align: right;" (click)="addMoreDropdown()">+Add more</p>
+                </div>
+                <input style="width:100%" type="text" id="dropdownOption1" placeholder="option 1">
+                <div id="dropdownOptionNew">
+                </div>
+              </div>
+              <br>
+              <b>Mandatory </b>
+              <br>
+              <select style="width: 50%;height: 25px;" id="Mandatory" (focusout)="updatePreview1()">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <br>
+              <br>
+              <b>Preview</b>
+              <div style="background-color: #eaeaea;height: 57px;width: 100%;">
+                <div style="padding: 10px;" id="preview1">
+                </div>
+              </div>
+  
+            </div>
+          </div>
+          <div class="addFieldPopup3" style="height: 57px;">
+            <button class="addFieldPopupbutton" (click)="addField('close')">Close</button>
+            <span style="width: 20px;"> </span>
+            <button class="sendButton" (click)="addField('send')">Send</button>
+          </div>
+        </div>
+      </div>
+      <!-- Preview Visitor postor popup finish -->
+      <div class="hideInfo">App ID is required for SafeEntry auto check</div>

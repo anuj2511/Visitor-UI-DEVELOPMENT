@@ -9,6 +9,18 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
+<<<<<<< Updated upstream
+=======
+//new imports
+//import { GridModule } from '@syncfusion/ej2-angular-grids';
+// import { GridAllModule } from '@syncfusion/ej2-angular-grids'; 
+import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ExampleComponent } from './example/example.component';
+import { DataTablesModule } from 'angular-datatables';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+>>>>>>> Stashed changes
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -33,6 +45,19 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
     LayoutModule.forRoot(environment), // Inject the environemnt config into the Express layout component
+<<<<<<< Updated upstream
+=======
+   
+    DateRangePickerModule,
+    DataTablesModule,
+    Ng2OrderModule,
+    ToastrModule.forRoot({
+      maxOpened: 1,
+      preventDuplicates: true,
+      autoDismiss: true
+    }),
+    NguiAutoCompleteModule
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent],

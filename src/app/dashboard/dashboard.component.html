@@ -1,0 +1,164 @@
+<ul>
+  <li style="border: none;"><a routerLink="/dashboard">Dashboard</a></li>
+  <li style="border: none;"><a routerLink="/invites">Invites</a></li>
+  <li style="border: none;"><a routerLink="/configuration">Configuration</a></li>
+</ul>
+
+<div class="page-content-wrap" style="">
+  <div style="background-color: #f0f2f5;margin-left: 29px;margin-right: 25px;">
+    <div>
+      <h2 style="color: #727272;margin: 30px 0px 10px;font-weight: 400;font-size: 27px;">AquatiCo</h2>
+    </div>
+    <div style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 32px;padding: 12px 0px 5px;" id="toprow">
+      <div
+        style="display: inline-grid;;grid-template-columns: 1.5fr 2.5fr;height: 160px;background-color: white;border-top: 2.8px solid #6b58cd;"
+        id="grid1">
+        <img src="assets/images/meeting1.png" style="height: 130px; width: 132px; margin: 13px;">
+        <div style="text-align: center;">
+          <p style="color: #6b58cd; font-size: 63px;margin: 0;font-family: Droid Sans;padding-top: 10px;">{{total_visits}}</p>
+          <p style="color: rgb(94, 93, 93);margin: 0;font-weight: 500;font-size: 17px;"> TOTAL VISITS TODAY</p>
+        </div>
+      </div>
+      <div
+        style="display: grid;grid-template-columns: 1fr 3fr;height: 160px;background-color: white;border-top: 2.8px solid #6b58cd;;"
+        id="grid2">
+        <img src="assets/images/chart.png" style="height: 120px; width: 146px; margin: 13px;">
+        <div style="text-align: center;">
+          <p style="color: #6b58cd; font-size: 63px;margin: 0;padding-top: 10px;" (click)="invitedPopup()">{{invited_visitors}}</p>
+          <p style="color: rgb(94, 93, 93);margin: 0;font-weight: 500;font-size: 17px;">INVITED VISITORS TODAY</p>
+        </div>
+      </div>
+    </div>
+
+
+    <p style="color: rgb(137 133 133);margin: 8px 0px !important;font-size: 11px;">VISITOR SUMMARY</p>
+    <div id="dashboard" style="background-color: white;padding: 11px;">
+      <div  style="display: grid;grid-template-columns: 5fr auto;">
+      <div
+        style="display: grid;grid-template-columns: 1fr 1fr;column-gap: 32px; width: fit-content;padding: 20px 20px 0px 20px;">
+        <div>
+          <div style="color: #757575;font-weight: 700;margin-bottom: 6px;"><span>Date:</span></div>
+          <span class="brsmall"></span>
+          <div style="display: grid;grid-template-columns: auto auto auto;">
+          <div style="width: 137px;"><button type="button" style="height: 33px;background-color: white;width: 33px;border: 1px solid rgb(239 240 241);border-radius: 5px 0px 0px 5px"><span class="textColor"><</span> </button><button style="height: 33px;background-color: #f4f4f4;width: 64px;border: 1px solid rgb(239 240 241);" type="button" disabled><span style="color: rgb(117 117 117);font-weight: 600;">Today</span></button><button style="height: 33px;background-color: white;width: 33px;border: 1px solid rgb(239 240 241);border-radius: 0px 5px 5px 0px" type="button"> <span class="textColor">></span> </button></div>
+        </div>
+        </div>
+        <div style="margin-left: -42px;">
+          <div style="color: #757575;font-weight: 700;margin-bottom: 6px;"><span style="margin-left: 5px;">Period:</span></div>
+          <span class="brsmall"></span>
+          <ejs-daterangepicker [allowEdit]=false [openOnFocus]=true [showClearButton]=false id='daterangepicker'
+            placeholder='&nbsp;&nbsp; &nbsp;Select date range' [startDate]='start' [endDate]='end' (change)="ranged()">
+          </ejs-daterangepicker>
+        </div>
+      </div>
+        <div style="margin: 44px 20px 0px 0px;">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;border: 1px solid #e4e5e7;height: 30px;width: 47px;border-radius: 5px;padding: 2px;">
+              <span><img src='assets/images/columnIcon.png'style='height: 15px;' /></span>&nbsp;&nbsp;
+                <span class="fa fa-caret-down" aria-hidden="true"></span>
+            </button>
+            <form class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 4cm;">
+              <div style="display: grid;grid-template-columns: 0.6cm 3.6cm;padding: 10px;">
+                <div><input id="FullName" type="checkbox" name="" value="Fullname" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> Fullname</div>
+                <div><input id="Email" type="checkbox" name="" value="Email" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> Email</div>
+                <div><input id="ContactNo" type="checkbox" name="" value="ContactNo" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> ContactNo</div>
+                <div><input id="Host" type="checkbox" name="" value="Host" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> Host</div>
+                <div><input id="Purpose" type="checkbox" name="" value="Purpose" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> Purpose</div>
+                <div><input id="ArrivalTime" type="checkbox" name="" value="ArrivalTime" checked (click)="columnChooser($event.target.checked, $event.target.id)"></div><div> ArrivalTime</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="control-section" style="margin: 20px 20px 20px 20px;">
+        <table datatable  class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions">
+          <thead>
+            <tr>
+              <th id="images" width="50px"></th>
+              <th class="FullName">FullName</th>
+              <th class="Email">Email</th>
+              <th class="ContactNo">ContactNo</th>
+              <th class="Host">Host</th>
+              <th class="Purpose">Purpose</th>
+              <th class="ArrivalTime">Arrival Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of data" height="54px">
+              <td width="50px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
+                style="width: 40px;height: 40px;" /></td>
+              <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.FullName)" id="{{user.FullName}}">{{ user.FullName }}</td>
+              <td class="Email">{{ user.Email }}</td>
+              <td class="ContactNo">{{ user.ContactNo }}</td>
+              <td class="Host">{{ user.Host }}</td>
+              <td class="Purpose">{{ user.Purpose }}</td>
+              <td class="ArrivalTime">{{ user.ArrivalTime }}</td>
+            </tr>  
+          </tbody>
+        </table>
+        <div style="width: 100%;background-color: white;min-height: 110px;">
+          <div style="padding:15px 0px 15px;display: grid;grid-template-columns: 1fr auto">
+            <div>
+          </div>
+          </div>
+          <div style="border-bottom: 1px solid rgb(221 221 221); padding: 10px;"></div>
+          <div style="padding: 14px 0px 9px;"><button style="background-color: rgb(99 203 49 / 1);color: white; border-radius: 3px;border: none; width: 85px; height: 33px;float: right;" (click)="redirectToVisitorProfile('New')">Add Visitor</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Popup start -->
+  <div class="addFieldPopupTop" id="addFieldPopupTop">
+    <div class="addFieldPopup1" id="addFieldPopup">
+      <div class="addFieldPopup2">
+        <div class="topBar"></div>
+        <div style="height: 60px;text-align: center ;background-color: #f6f6f6;padding: 10px;font-weight: 400;color: #757575;">
+          Invited Visitors<br>
+          Wed, 01 September 2021
+        </div>
+        <div style="padding: 15px;">
+          <div id="dashboard" style="background-color: white;">
+            <div  style="display: grid;grid-template-columns: 5fr auto;">
+            <div class="control-section">
+              <table datatable  class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions">
+                <thead>
+                  <tr>
+                    <th id="images" width="50px"></th>
+                    <th class="FullName">FullName</th>
+                    <th class="Email">Invited By</th>
+                    <th class="Purpose">Purpose</th>
+                    <!-- <th class="ContactNo">ContactNo</th>
+                    <th class="Host">Host</th> -->
+                    <th class="ExtendedArrivalTime">Extended Arrival Time</th>
+                    <th class="ArrivalTime">Arrival Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of popupData" height="54px">
+                    <td width="50px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
+                      style="width: 40px;height: 40px;" /></td>
+                    <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.FullName)" id="{{user.FullName}}">{{ user.FullName }}</td>
+                    <td class="Email">{{ user.Email }}</td>
+                    <td class="Purpose">{{ user.Purpose }}</td>
+                    <!-- <td class="ContactNo">{{ user.ContactNo }}</td>
+                    <td class="Host">{{ user.Host }}</td> -->
+                    <td class="ExtendedArrivalTime">{{ user.ArrivalTime }}</td>
+                    <td class="ArrivalTime">{{ user.ArrivalTime }}</td>
+                  </tr>  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="addFieldPopup3" style="height: 57px;">
+        <button class="addFieldPopupbutton" (click)="hideinvitePopup()" >Close</button>
+        <span style="width: 20px;"> </span>
+        <!-- <button class="sendButton">Send</button> -->
+      </div>
+    </div>
+  </div>
+  <!-- Popup finish -->
