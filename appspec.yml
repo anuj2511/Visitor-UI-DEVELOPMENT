@@ -2,9 +2,9 @@ version: 0.0
 os: windows
 files:
   - source: \dist
-    destination: c:\inetpub\app.justlogin-host\scaffold
+    destination: c:\inetpub\app.justlogin-host\visitor-management
   - source: web.config
-    destination: c:\inetpub\app.justlogin-host\scaffold
+    destination: c:\inetpub\app.justlogin-host\visitor-management
 # hooks:
 #   BeforeInstall:
 #     - location: \before-install.bat

@@ -1,19 +1,19 @@
 {
-  "name": "angular-scaffold",
+  "name": "visitor-management",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "start:development": "ng serve --base-href=/scaffold/ --configuration=development",
-    "start:staging": "ng serve --base-href=/scaffold/ --configuration=staging",
-    "start:production": "ng serve --base-href=/scaffold/ --configuration=production",
+    "start:development": "ng serve --base-href=/visitor-management/ --configuration=development",
+    "start:staging": "ng serve --base-href=/visitor-management/ --configuration=staging",
+    "start:production": "ng serve --base-href=/visitor-management/ --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:development": "ng build --base-href=/scaffold/ --configuration=development",
-    "build:staging": "ng build --base-href=/scaffold/ --configuration=staging",
-    "build:production": "ng build --base-href=/scaffold/ --configuration=production"
+    "build:development": "ng build --base-href=/visitor-management/ --configuration=development",
+    "build:staging": "ng build --base-href=/visitor-management/ --configuration=staging",
+    "build:production": "ng build --base-href=/visitor-management/ --configuration=production"
   },
   "private": true,
   "dependencies": {

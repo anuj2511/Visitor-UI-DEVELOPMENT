@@ -39,7 +39,7 @@ export const environment = {
      * Define the root path of the Angular app. This should be the same as `base href` in index.html
      * This is used in menu.xml (baseUrl) to identify if the side menu link is internal for the application or external
      */
-    AppRootPath: '/scaffold',
+    AppRootPath: '/visitor-management',
 
     /**
      * The root url for the apis
