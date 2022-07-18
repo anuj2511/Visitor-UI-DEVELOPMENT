@@ -24,7 +24,7 @@
         id="grid2">
         <img src="assets/images/chart.png" style="height: 120px; width: 146px; margin: 13px;">
         <div style="text-align: center;">
-          <p style="color: #6b58cd; font-size: 63px;margin: 0;padding-top: 10px;">{{invited_visitors}}</p>
+          <p style="color: #6b58cd; font-size: 63px;margin: 0;padding-top: 10px;" (click)="invitedPopup()">{{invited_visitors}}</p>
           <p style="color: rgb(94, 93, 93);margin: 0;font-weight: 500;font-size: 17px;">INVITED VISITORS TODAY</p>
         </div>
       </div>
@@ -84,15 +84,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of data" height="55px">
-              <td width="50px"><img src="assets/images/{{user.Image}}" alt="{{user.EmployeeID}}"
-                style="width: 50px;height: 50px;" /></td>
-              <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.FullName)" id="{{user.FullName}}">{{ user.FullName }}</td>
-              <td class="Email">{{ user.Email }}</td>
-              <td class="ContactNo">{{ user.ContactNo }}</td>
-              <td class="Host">{{ user.Host }}</td>
-              <td class="Purpose">{{ user.Purpose }}</td>
-              <td class="ArrivalTime">{{ user.ArrivalTime }}</td>
+            <tr *ngFor="let user of data" height="54px">
+              <td width="50px"><img src="{{user.imageUrl}}" alt="{{user.EmployeeID}}"
+                style="width: 40px;height: 40px;" /></td>
+              <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.id,'')" id="{{user.name}}">{{ user.name }}</td>
+              <td class="Email">{{ user.email }}</td>
+              <td class="ContactNo">{{ user.mobile }}</td>
+              <td class="Host">{{ fillTable(user.lastEntry,'host') }}</td><!--lastEntry.hosts.name-->
+              <td class="Purpose">{{ fillTable(user.lastEntry,'purpose') }}</td>
+              <td class="ArrivalTime">{{fillTable(user.lastEntry,'arrivalTime') }}</td>
             </tr>  
           </tbody>
         </table>
@@ -102,9 +102,63 @@
           </div>
           </div>
           <div style="border-bottom: 1px solid rgb(221 221 221); padding: 10px;"></div>
-          <div style="padding: 14px 0px 9px;"><button style="background-color: rgb(99 203 49 / 1);color: white; border-radius: 3px;border: none; width: 85px; height: 33px;float: right;">Add Visitor</button></div>
+          <div style="padding: 14px 0px 9px;"><button style="background-color: rgb(99 203 49 / 1);color: white; border-radius: 3px;border: none; width: 85px; height: 33px;float: right;" (click)="redirectToVisitorProfile('New','')">Add Visitor</button></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+  <!-- Popup start -->
+  <div class="addFieldPopupTop" id="addFieldPopupTop">
+    <div class="addFieldPopup1" id="addFieldPopup">
+      <div class="addFieldPopup2">
+        <div class="topBar"></div>
+        <div style="height: 60px;text-align: center ;background-color: #f6f6f6;padding: 10px;font-weight: 400;color: #757575;">
+          Invited Visitors<br>
+          Wed, 01 September 2021
+        </div>
+        <div style="padding: 15px;">
+          <div id="dashboard" style="background-color: white;">
+            <div  style="display: grid;grid-template-columns: 5fr auto;">
+            <div class="control-section">
+              <table datatable  class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                  <tr>
+                    <th id="images" width="50px"></th>
+                    <th class="FullName">FullName</th>
+                    <th class="Email">Invited By</th>
+                    <th class="Purpose">Purpose</th>
+                    <!-- <th class="ContactNo">ContactNo</th>
+                    <th class="Host">Host</th> -->
+                    <th class="ExtendedArrivalTime">Extended Arrival Time</th>
+                    <th class="ArrivalTime">Arrival Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of popupData" height="54px">
+                    <td width="50px"><img src="{{user.imageUrl}}" alt="{{user.EmployeeID}}"
+                      style="width: 40px;height: 40px;" /></td>
+                    <td class="FullName Name" style="color: #058fd4;" (click)="redirectToVisitorProfile(user.id,'popup')" id="{{user.name}}">{{ user.name }}</td>
+                    <td class="Email">{{ user.email }}</td>
+                    <td class="Purpose">{{fillTable(user.lastEntry,'purpose')}}</td>
+                    <!-- <td class="ContactNo">{{ user.ContactNo }}</td>
+                    <td class="Host">{{ user.Host }}</td> -->
+                    <td class="ExtendedArrivalTime">{{ fillTable(user.lastEntry,'arrivalTime') }}</td>
+                    <td class="ArrivalTime">{{ fillTable(user.lastEntry,'arrivalTime') }}</td>
+                  </tr>  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="addFieldPopup3" style="height: 57px;">
+        <button class="addFieldPopupbutton" (click)="hideinvitePopup()" >Close</button>
+        <span style="width: 20px;"> </span>
+        <!-- <button class="sendButton">Send</button> -->
+      </div>
+    </div>
+  </div>
+  <!-- Popup finish -->

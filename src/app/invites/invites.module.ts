@@ -6,6 +6,8 @@ import { InvitesComponent } from './invites.component';
 import { GridAllModule } from '@syncfusion/ej2-angular-grids'; 
 import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DataTablesModule } from 'angular-datatables';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+
 
 @NgModule({
   declarations: [InvitesComponent],
@@ -14,7 +16,8 @@ import { DataTablesModule } from 'angular-datatables';
     InvitesRoutingModule,
     GridAllModule,
     DateRangePickerModule,
-    DataTablesModule
+    DataTablesModule,
+    NguiAutoCompleteModule
   ]
 })
 export class InvitesModule { }

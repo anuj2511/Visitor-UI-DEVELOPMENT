@@ -4,6 +4,7 @@ import { filter } from 'rxjs/operators';
 import jwt_decode from "jwt-decode";
 import { environment } from '../environments/environment';
 import { CookiestorageService, LogService, FloodgateService, MixpanelService } from '@justlogin/express-ui';
+import { VisitorApiService } from './visitor-api.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ export class AppComponent {
     private cookieStorageService: CookiestorageService,
     private logger: LogService,
     private mixpanelService: MixpanelService,
-    private floodgateService: FloodgateService) {
+    private floodgateService: FloodgateService,
+    private ApiService:VisitorApiService) {
     this.logger.WriteLog(this.IsAuthenticated.toString(), "IsAuthenticated >>>");
 
     this.router.events.pipe(filter(event => event instanceof GuardsCheckEnd)
@@ -30,6 +32,7 @@ export class AppComponent {
       // this.logger.WriteLog('>> GuardsCheckEnd <<');
 
       this.AuthToken = this.cookieStorageService.getAccessToken();
+      this.ApiService.Token = this.AuthToken;
 
       if (this.AuthToken) {
         // Check the token has not expired

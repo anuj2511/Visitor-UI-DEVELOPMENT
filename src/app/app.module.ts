@@ -16,6 +16,8 @@ import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ExampleComponent } from './example/example.component';
 import { DataTablesModule } from 'angular-datatables';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -45,7 +47,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
    
     DateRangePickerModule,
     DataTablesModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    ToastrModule.forRoot({
+      maxOpened: 1,
+      preventDuplicates: true,
+      autoDismiss: true
+    }),
+    NguiAutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],
